@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Francis Obinna Madubuike – Photography Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
+    .dropdown-content { display: none; }
+    .dropdown-active .dropdown-content { display: block; }
+  </style>
+</head>
+<body class="bg-zinc-50 flex min-h-screen">
+
+  <!-- FIXED SIDEBAR -->
+  <aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
+    <div class="p-8 sticky top-0 bg-white border-b">
+      <div class="flex flex-col items-center text-center">
+        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" 
+             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
+        <p class="text-blue-600 font-medium text-lg mt-1">Construction Informatics | Digital Twins | Project Management | Researcher</p>
+      </div>
+    </div>
+    <div class="p-8 space-y-10">
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
+        <p class="text-zinc-700 leading-relaxed text-[15px]">
+          Passionate photographer offering professional-quality images for events, portraits, products, construction progress and creative projects.
+        </p>
+      </div>
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
+        <div class="space-y-4 text-base mt-4">
+          <a href="mailto:your.email@domain.com" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-envelope w-5 text-zinc-500"></i> your.email@domain.com
+          </a>
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
+             class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fab fa-linkedin w-5 text-zinc-500"></i> LinkedIn
+          </a>
+          <a href="tel:+234xxxxxxxxxx" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-phone w-5 text-zinc-500"></i> +234 xxx xxx xxxx
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 ml-80">
+
+    <!-- TOP NAVIGATION -->
+    <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
+      <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+        <div class="flex items-center gap-10 text-lg font-medium">
+          <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
+              Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
+              <a href="resume-pm.html" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
+              <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 text-blue-600 font-semibold">
+              Services <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
+              <a href="services-courses.html" class="block px-6 py-2.5 hover:bg-zinc-50">Course Facilitation</a>
+              <a href="services-notary.html" class="block px-6 py-2.5 hover:bg-zinc-50">Notary Public</a>
+              <a href="services-cleaning.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
+              <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50 font-medium">Photography</a>
+            </div>
+          </div>
+
+          <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
+        </div>
+        <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+      </div>
+    </nav>
+
+    <!-- SERVICE HEADER -->
+    <section class="bg-gradient-to-br from-amber-50 to-orange-50 py-20 md:py-28 border-b border-zinc-200">
+      <div class="max-w-5xl mx-auto px-8 text-center">
+        <div class="text-6xl mb-6">📸</div>
+        <h1 class="text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Photography Services</h1>
+        <p class="text-xl md:text-2xl text-zinc-700 max-w-4xl mx-auto mb-10 leading-relaxed">
+          Professional photography for events, portraits, products, construction progress documentation, 
+          architecture, creative projects and personal milestones.
+        </p>
+
+        <a href="contact.html"
+           class="inline-flex items-center gap-3 bg-amber-600 text-white px-12 py-6 rounded-2xl font-semibold text-xl hover:bg-amber-700 transition shadow-lg">
+          <i class="fas fa-camera"></i> Book a Photography Session
+        </a>
+      </div>
+    </section>
+
+    <!-- MAIN SERVICE CONTENT -->
+    <section class="max-w-5xl mx-auto px-6 md:px-8 py-16">
+      <div class="prose prose-lg max-w-none text-zinc-700">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Photography Categories</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+            <h3 class="text-2xl font-bold mb-4 text-amber-700">Event & Celebration Photography</h3>
+            <ul class="list-disc list-inside space-y-2 text-[15px]">
+              <li>Weddings, birthdays, anniversaries, baby showers</li>
+              <li>Corporate events, conferences, product launches</li>
+              <li>Church programs, award ceremonies, graduations</li>
+              <li>Full-day or partial coverage packages available</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+            <h3 class="text-2xl font-bold mb-4 text-amber-700">Portrait & Headshot Sessions</h3>
+            <ul class="list-disc list-inside space-y-2 text-[15px]">
+              <li>Professional LinkedIn / corporate headshots</li>
+              <li>Personal branding & actor/model portfolios</li>
+              <li>Family portraits, maternity, newborn</li>
+              <li>Studio or on-location (natural light) options</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+            <h3 class="text-2xl font-bold mb-4 text-amber-700">Construction & Progress Photography</h3>
+            <ul class="list-disc list-inside space-y-2 text-[15px]">
+              <li>Before / during / after construction documentation</li>
+              <li>Project milestone photography for reports & marketing</li>
+              <li>Aerial/drone shots (coordinated with licensed operator when needed)</li>
+              <li>Time-lapse setup consultation available</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+            <h3 class="text-2xl font-bold mb-4 text-amber-700">Product & Real Estate Photography</h3>
+            <ul class="list-disc list-inside space-y-2 text-[15px]">
+              <li>E-commerce product shots (white background + lifestyle)</li>
+              <li>Residential & commercial property interiors/exteriors</li>
+              <li>360° virtual tour photography (basic)</li>
+              <li>High-resolution images optimized for web & print</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service Details -->
+        <div class="bg-amber-50 rounded-2xl p-10 md:p-12 mb-16 border border-amber-100">
+          <h2 class="text-3xl font-bold text-center mb-8">What You Get</h2>
+
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div class="text-5xl mb-4">⚡</div>
+              <h4 class="font-semibold text-xl mb-2">Fast Turnaround</h4>
+              <p class="text-zinc-700">Edited images delivered within 3–7 days (rush options available)</p>
+            </div>
+            <div>
+              <div class="text-5xl mb-4">🎨</div>
+              <h4 class="font-semibold text-xl mb-2">Professional Editing</h4>
+              <p class="text-zinc-700">Color correction, retouching, cropping – commercial quality</p>
+            </div>
+            <div>
+              <div class="text-5xl mb-4">📦</div>
+              <h4 class="font-semibold text-xl mb-2">Flexible Packages</h4>
+              <p class="text-zinc-700">Hourly, half-day, full-day & custom packages</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center">
+          <h3 class="text-3xl font-bold mb-6">Ready to Capture Your Moment or Project?</h3>
+          <p class="text-xl text-zinc-600 mb-10 max-w-3xl mx-auto">
+            Contact me to discuss your photography needs, get a quote, or book a session.
+          </p>
+          <a href="contact.html"
+             class="inline-flex items-center gap-3 bg-amber-600 text-white px-12 py-6 rounded-2xl font-semibold text-xl hover:bg-amber-700 transition shadow-lg">
+             <i class="fas fa-camera-retro"></i> Book Your Photography Session
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-zinc-900 text-white/80 py-12 text-center text-sm border-t border-zinc-800">
+      © March 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
+    </footer>
+
+  </main>
+
+  <script>
+    function toggleDropdown(btn) {
+      const group = btn.parentElement;
+      group.classList.toggle('dropdown-active');
+      document.querySelectorAll('.group').forEach(el => {
+        if (el !== group) el.classList.remove('dropdown-active');
+      });
+    }
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.group')) {
+        document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
+      }
+    });
+  </script>
+
+</body>
+</html>
