@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Francis Obinna Madubuike – Professional Cleaning Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
     .sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
@@ -13,22 +15,14 @@
     .dropdown-active .dropdown-content { display: block; }
   </style>
 </head>
-<body class="bg-zinc-50 min-h-screen">
+<body class="bg-zinc-50 flex min-h-screen">
 
-  <!-- Hamburger button – visible only on mobile -->
-  <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg focus:outline-none">
-    <i class="fas fa-bars text-2xl text-zinc-800"></i>
-  </button>
-
-  <!-- Sidebar – hidden on mobile by default -->
-  <aside id="sidebar" class="
-    fixed inset-y-0 left-0 z-40 w-80 bg-white border-r border-zinc-200 overflow-y-auto shadow-2xl
-    transform -translate-x-full transition-transform duration-300 ease-in-out
-    md:translate-x-0 md:relative md:inset-auto md:shadow-none md:border-r md:h-auto
-  ">
-    <div class="p-8 sticky top-0 bg-white border-b md:border-b-0">
+  <!-- FIXED SIDEBAR -->
+  <aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
+    <div class="p-8 sticky top-0 bg-white border-b">
       <div class="flex flex-col items-center text-center">
-        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" 
+             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
         <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
         <p class="text-blue-600 font-medium text-lg mt-1">Construction Informatics | Digital Twins | Project Management | Researcher</p>
       </div>
@@ -46,7 +40,8 @@
           <a href="mailto:your.email@domain.com" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
             <i class="fas fa-envelope w-5 text-zinc-500"></i> your.email@domain.com
           </a>
-          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
+             class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
             <i class="fab fa-linkedin w-5 text-zinc-500"></i> LinkedIn
           </a>
           <a href="tel:+234xxxxxxxxxx" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
@@ -57,18 +52,13 @@
     </div>
   </aside>
 
-  <!-- Overlay -->
-  <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"></div>
-
   <!-- MAIN CONTENT -->
-  <main id="main-content" class="flex-1 transition-all duration-300 md:ml-80">
+  <main class="flex-1 ml-80">
 
     <!-- TOP NAVIGATION -->
     <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <a href="index.html" class="text-xl sm:text-2xl font-bold text-blue-600">Francis Obinna</a>
-
-        <div class="hidden md:flex items-center gap-8 lg:gap-10 text-base lg:text-lg font-medium">
+      <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+        <div class="flex items-center gap-10 text-lg font-medium">
           <a href="index.html" class="hover:text-blue-600 transition">Home</a>
 
           <div class="relative group">
@@ -95,114 +85,127 @@
 
           <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
         </div>
-
-        <a href="assets/resume.pdf" target="_blank" class="text-sm sm:text-base text-zinc-500 hover:text-blue-600 hidden sm:block">
-          ↓ PDF Resume
-        </a>
+        <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
       </div>
     </nav>
 
     <!-- SERVICE HEADER -->
-    <section class="bg-gradient-to-br from-teal-50 to-cyan-50 py-16 sm:py-20 md:py-28 border-b border-zinc-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section class="bg-gradient-to-br from-teal-50 to-cyan-50 py-20 md:py-28 border-b border-zinc-200">
+      <div class="max-w-5xl mx-auto px-8 text-center">
         <div class="text-6xl mb-6">🧼🧹</div>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Professional Cleaning Services</h1>
-        <p class="text-lg sm:text-xl md:text-2xl text-zinc-700 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed">
+        <h1 class="text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Professional Cleaning Services</h1>
+        <p class="text-xl md:text-2xl text-zinc-700 max-w-4xl mx-auto mb-10 leading-relaxed">
           Thorough, reliable and health-conscious cleaning for residential homes, offices, small commercial spaces and post-construction sites.
         </p>
 
         <a href="contact.html"
-           class="inline-flex items-center gap-3 bg-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg hover:bg-teal-700 transition shadow-lg">
+           class="inline-flex items-center gap-3 bg-teal-600 text-white px-12 py-6 rounded-2xl font-semibold text-xl hover:bg-teal-700 transition shadow-lg">
           <i class="fas fa-broom"></i> Request Cleaning Quote / Booking
         </a>
       </div>
     </section>
 
     <!-- MAIN SERVICE CONTENT -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10">Cleaning Services Offered</h2>
+    <section class="max-w-5xl mx-auto px-6 md:px-8 py-16">
+      <div class="prose prose-lg max-w-none text-zinc-700">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Cleaning Services Offered</h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
-        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-teal-700">Regular / Recurring Cleaning</h3>
-          <ul class="list-disc list-inside space-y-2 text-sm sm:text-[15px]">
-            <li>Weekly, bi-weekly or monthly scheduled cleans</li>
-            <li>Kitchen deep clean (appliances, cabinets, sinks)</li>
-            <li>Bathroom sanitization & fixture polishing</li>
-            <li>Dusting, vacuuming, mopping</li>
-          </ul>
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+            <h3 class="text-2xl font-bold mb-4 text-teal-700">Regular / Recurring Home & Office Cleaning</h3>
+            <ul class="list-disc list-inside space-y-2 text-[15px]">
+              <li>Weekly, bi-weekly or monthly scheduled cleans</li>
+              <li>Kitchen deep clean (appliances, cabinets, sinks)</li>
+              <li>Bathroom sanitization & fixture polishing</li>
+              <li>Dusting, vacuuming, mopping, window sills & doors</li>
+              <li>Waste removal & bin sanitization</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+            <h3 class="text-2xl font-bold mb-4 text-teal-700">Deep Cleaning & Move-In / Move-Out</h3>
+            <ul class="list-disc list-inside space-y-2 text-[15px]">
+              <li>Full-property deep clean before/after moving</li>
+              <li>Inside cabinets, ovens, refrigerators, behind appliances</li>
+              <li>Wall washing, baseboard & door frame detailing</li>
+              <li>Carpet & upholstery basic cleaning (or coordination with specialist)</li>
+              <li>Post-renovation / construction dust & debris removal</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+            <h3 class="text-2xl font-bold mb-4 text-teal-700">Post-Construction / After Renovation Cleaning</h3>
+            <ul class="list-disc list-inside space-y-2 text-[15px]">
+              <li>Removal of construction dust from all surfaces</li>
+              <li>Cleaning of windows, frames, sills & tracks</li>
+              <li>Polishing of floors, tiles, fixtures & fittings</li>
+              <li>Final detailed clean ready for occupancy</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+            <h3 class="text-2xl font-bold mb-4 text-teal-700">Specialized & Eco-Friendly Options</h3>
+            <ul class="list-disc list-inside space-y-2 text-[15px]">
+              <li>Use of green / low-chemical products on request</li>
+              <li>Airbnb turnover cleans</li>
+              <li>Event space pre/post clean-up</li>
+              <li>One-time spring / seasonal deep cleans</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-teal-700">Deep Cleaning & Move-In/Out</h3>
-          <ul class="list-disc list-inside space-y-2 text-sm sm:text-[15px]">
-            <li>Full-property deep clean before/after moving</li>
-            <li>Inside cabinets, ovens, refrigerators</li>
-            <li>Wall washing, baseboard detailing</li>
-            <li>Post-renovation dust removal</li>
-          </ul>
+        <!-- Important Information -->
+        <div class="bg-teal-50 rounded-2xl p-10 md:p-12 mb-16 border border-teal-100">
+          <h2 class="text-3xl font-bold text-center mb-8">Service Details</h2>
+
+          <div class="grid md:grid-cols-2 gap-10">
+            <div>
+              <h4 class="text-xl font-semibold mb-4 flex items-center gap-3">
+                <i class="fas fa-check-circle text-teal-600"></i> What to Expect
+              </h4>
+              <ul class="space-y-2 text-[15px]">
+                <li>Trained, vetted cleaner(s)</li>
+                <li>All basic equipment & eco-friendly supplies provided</li>
+                <li>Respect for your property & privacy</li>
+                <li>Satisfaction guarantee – touch-ups when needed</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-xl font-semibold mb-4 flex items-center gap-3">
+                <i class="fas fa-calendar-check text-teal-600"></i> Booking & Pricing
+              </h4>
+              <ul class="space-y-2 text-[15px]">
+                <li>Free on-site / video quote for most jobs</li>
+                <li>Transparent pricing (per hour / flat rate options)</li>
+                <li>Flexible scheduling – weekdays, weekends, evenings</li>
+                <li>Recurring clients receive priority & discounts</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-teal-700">Post-Construction Cleaning</h3>
-          <ul class="list-disc list-inside space-y-2 text-sm sm:text-[15px]">
-            <li>Removal of construction dust from all surfaces</li>
-            <li>Cleaning of windows, frames, sills</li>
-            <li>Polishing of floors, tiles, fixtures</li>
-            <li>Final detailed clean ready for occupancy</li>
-          </ul>
+        <!-- Call to Action -->
+        <div class="text-center">
+          <h3 class="text-3xl font-bold mb-6">Need Your Space Cleaned Professionally?</h3>
+          <p class="text-xl text-zinc-600 mb-10 max-w-3xl mx-auto">
+            Contact me today for a free quote or to schedule your cleaning service.
+          </p>
+          <a href="contact.html"
+             class="inline-flex items-center gap-3 bg-teal-600 text-white px-12 py-6 rounded-2xl font-semibold text-xl hover:bg-teal-700 transition shadow-lg">
+             <i class="fas fa-broom"></i> Get a Cleaning Quote Now
+          </a>
         </div>
-
-        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-teal-700">Eco-Friendly & Special Cleans</h3>
-          <ul class="list-disc list-inside space-y-2 text-sm sm:text-[15px]">
-            <li>Green / low-chemical products on request</li>
-            <li>Airbnb turnover cleans</li>
-            <li>Event space pre/post clean-up</li>
-            <li>Seasonal deep cleans</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="text-center">
-        <h3 class="text-2xl sm:text-3xl font-bold mb-6">Need Your Space Cleaned?</h3>
-        <p class="text-base sm:text-lg text-zinc-600 mb-8 max-w-3xl mx-auto">
-          Free quote • Flexible scheduling • Satisfaction guarantee
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-3 bg-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg hover:bg-teal-700 transition shadow-lg">
-          <i class="fas fa-broom"></i> Get a Cleaning Quote Now
-        </a>
       </div>
     </section>
 
-    <footer class="bg-zinc-900 text-white/80 py-8 sm:py-10 text-center text-sm border-t border-zinc-800">
-      © 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
+    <footer class="bg-zinc-900 text-white/80 py-12 text-center text-sm border-t border-zinc-800">
+      © March 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
     </footer>
 
   </main>
 
-  <!-- JavaScript (same as previous pages) -->
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-
-    function toggleMenu() {
-      sidebar.classList.toggle('-translate-x-full');
-      overlay.classList.toggle('hidden');
-      document.body.classList.toggle('overflow-hidden');
-    }
-
-    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
-    if (overlay) overlay.addEventListener('click', toggleMenu);
-
-    document.querySelectorAll('#sidebar a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 768) toggleMenu();
-      });
-    });
-
     function toggleDropdown(btn) {
       const group = btn.parentElement;
       group.classList.toggle('dropdown-active');
