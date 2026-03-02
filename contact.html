@@ -1,141 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Contact</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: system-ui, -apple-system, sans-serif; }
-        .sidebar { scrollbar-width: thin; }
-        .dropdown-content { display: none; }
-        .dropdown-active .dropdown-content { display: block; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Francis Obinna Madubuike – Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
+    .dropdown-content { display: none; }
+    .dropdown-active .dropdown-content { display: block; }
+  </style>
 </head>
 <body class="bg-zinc-50 flex min-h-screen">
 
-<!-- FIXED SIDEBAR – no download buttons -->
-<aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
+  <!-- FIXED SIDEBAR -->
+  <aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
     <div class="p-8 sticky top-0 bg-white border-b">
-        <div class="flex flex-col items-center text-center">
-            <img src="profile.jpg" alt="Profile Photo" 
-                 class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
-            <h1 class="text-3xl font-bold text-zinc-900">Your Full Name</h1>
-            <p class="text-blue-600 font-medium text-lg mt-1">
-                Project Manager | Researcher | Multi-Service Professional
-            </p>
-        </div>
+      <div class="flex flex-col items-center text-center">
+        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" 
+             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
+        <p class="text-blue-600 font-medium text-lg mt-1">Construction Informatics | Digital Twins | Project Management | Researcher</p>
+      </div>
     </div>
-    
     <div class="p-8 space-y-10">
-        <div>
-            <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
-            <p class="text-zinc-700 leading-relaxed text-[15px]">
-                Professional summary goes here (4–6 sentences). 
-                Experienced in project management, academic research, training facilitation, 
-                notary services, professional cleaning, and photography.
-            </p>
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
+        <p class="text-zinc-700 leading-relaxed text-[15px]">
+          Open to inquiries about research collaboration, project management consulting, 
+          course facilitation bookings, notary services, cleaning jobs, photography sessions, 
+          or any professional discussion.
+        </p>
+      </div>
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
+        <div class="space-y-4 text-base mt-4">
+          <a href="mailto:your.email@domain.com" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-envelope w-5 text-zinc-500"></i> your.email@domain.com
+          </a>
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
+             class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fab fa-linkedin w-5 text-zinc-500"></i> LinkedIn
+          </a>
+          <a href="tel:+234xxxxxxxxxx" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-phone w-5 text-zinc-500"></i> +234 xxx xxx xxxx
+          </a>
         </div>
-
-        <div>
-            <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
-            <div class="space-y-4 text-base mt-4">
-                <a href="mailto:your.email@example.com" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fas fa-envelope w-5 text-zinc-500"></i>
-                    your.email@example.com
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fab fa-linkedin w-5 text-zinc-500"></i>
-                    LinkedIn Profile
-                </a>
-                <a href="tel:+1234567890" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fas fa-phone w-5 text-zinc-500"></i>
-                    +123 456 7890
-                </a>
-                <!-- Add WhatsApp or other links here if desired -->
-            </div>
-        </div>
+      </div>
     </div>
-</aside>
+  </aside>
 
-        <!-- TOP NAV -->
-        <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
-            <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-                <div class="flex items-center gap-10 text-lg font-medium">
-                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 ml-80">
 
-                    <div class="relative group">
-                        <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
-                            Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
-                        </button>
-                        <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
-                            <a href="resume.html#pm" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
-                            <a href="resume.html#academic" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
-                        </div>
-                    </div>
+    <!-- TOP NAVIGATION -->
+    <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
+      <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+        <div class="flex items-center gap-10 text-lg font-medium">
+          <a href="index.html" class="hover:text-blue-600 transition">Home</a>
 
-                    <div class="relative group">
-                        <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
-                            Services <i class="fas fa-chevron-down text-xs ml-1"></i>
-                        </button>
-                        <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50 font-medium">All Services</a>
-                            <div class="px-6 py-2 text-xs uppercase text-zinc-400 mt-1">Course Facilitator</div>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Leadership & Project Management</a>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Research Methodology</a>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Data Analysis</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50 mt-1">Notary Public</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
-                        </div>
-                    </div>
-
-                    <a href="contact.html" class="text-blue-600 font-semibold">Contact Me</a>
-                </div>
-                <a href="resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
+              Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
+              <a href="resume-pm.html" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
+              <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
             </div>
-        </nav>
+          </div>
 
-        <section class="py-20">
-            <div class="max-w-4xl mx-auto px-8 text-center">
-                <h1 class="text-5xl font-bold mb-6">Get in Touch</h1>
-                <p class="text-xl text-zinc-600 mb-12 max-w-2xl mx-auto">Ready to discuss projects, research collaboration, training sessions, notary needs, cleaning, or photography services?</p>
-
-                <div class="bg-white rounded-2xl shadow-lg p-12 max-w-xl mx-auto">
-                    <a href="mailto:your.email@example.com" class="block w-full bg-zinc-900 text-white py-6 rounded-xl text-2xl font-semibold hover:bg-black transition mb-10">
-                        Send an Email
-                    </a>
-                    <div class="text-2xl mb-4">
-                        <i class="fas fa-phone text-blue-600 mr-3"></i>
-                        <a href="tel:+1234567890" class="hover:text-blue-600">+123 456 7890</a>
-                    </div>
-                    <p class="text-zinc-500">WhatsApp available • Usually reply within 24 hours</p>
-                </div>
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
+              Services <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
+              <a href="services-courses.html" class="block px-6 py-2.5 hover:bg-zinc-50">Course Facilitation</a>
+              <a href="services-notary.html" class="block px-6 py-2.5 hover:bg-zinc-50">Notary Public</a>
+              <a href="services-cleaning.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
+              <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
             </div>
-        </section>
+          </div>
 
-        <footer class="bg-zinc-900 text-white/80 py-10 text-center text-sm">
-            © 2026 Your Full Name • Hosted on GitHub Pages
-        </footer>
-    </main>
+          <a href="contact.html" class="text-blue-600 font-semibold">Contact Me</a>
+        </div>
+        <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+      </div>
+    </nav>
 
-    <script>
-        function toggleDropdown(btn) {
-            const group = btn.closest('.group') || btn.parentElement;
-            group.classList.toggle('dropdown-active');
-            document.querySelectorAll('.group').forEach(el => {
-                if (el !== group) el.classList.remove('dropdown-active');
-            });
-        }
-        document.addEventListener('click', e => {
-            if (!e.target.closest('.group')) {
-                document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
-            }
-        });
-    </script>
+    <!-- CONTACT HEADER -->
+    <section class="bg-gradient-to-br from-zinc-50 to-slate-100 py-20 md:py-28 border-b border-zinc-200">
+      <div class="max-w-5xl mx-auto px-8 text-center">
+        <div class="text-6xl mb-6">✉️</div>
+        <h1 class="text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Get in Touch</h1>
+        <p class="text-xl md:text-2xl text-zinc-700 max-w-4xl mx-auto mb-10 leading-relaxed">
+          Whether you're interested in research collaboration, project management consulting, 
+          course bookings, notary services, cleaning jobs, photography sessions, or just want to say hello — 
+          I'm happy to hear from you.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT OPTIONS -->
+    <section class="max-w-5xl mx-auto px-6 md:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Email -->
+        <div class="bg-white p-10 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100 text-center">
+          <div class="text-6xl mb-6 text-blue-600"><i class="fas fa-envelope"></i></div>
+          <h3 class="text-2xl font-bold mb-4">Email</h3>
+          <p class="text-zinc-600 mb-6 text-lg">Best for detailed inquiries, proposals, or attachments</p>
+          <a href="mailto:your.email@domain.com" 
+             class="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-blue-700 transition">
+            Send Email
+          </a>
+        </div>
+
+        <!-- Phone / WhatsApp -->
+        <div class="bg-white p-10 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100 text-center">
+          <div class="text-6xl mb-6 text-green-600"><i class="fas fa-phone-volume"></i></div>
+          <h3 class="text-2xl font-bold mb-4">Phone / WhatsApp</h3>
+          <p class="text-zinc-600 mb-6 text-lg">Quick questions, scheduling, or urgent matters</p>
+          <a href="tel:+234xxxxxxxxxx" 
+             class="inline-block bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
+            Call or Message
+          </a>
+          <p class="mt-4 text-sm text-zinc-500">(WhatsApp preferred for fast replies)</p>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="bg-white p-10 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100 text-center">
+          <div class="text-6xl mb-6 text-blue-700"><i class="fab fa-linkedin"></i></div>
+          <h3 class="text-2xl font-bold mb-4">LinkedIn</h3>
+          <p class="text-zinc-600 mb-6 text-lg">Professional networking, research discussions, collaborations</p>
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
+             class="inline-block bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold hover:bg-blue-800 transition">
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Response Time & Location -->
+      <div class="bg-white rounded-2xl p-10 md:p-12 shadow border border-zinc-100 text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">What to Expect</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div>
+            <div class="text-5xl mb-4">⏱️</div>
+            <h4 class="font-semibold text-xl mb-2">Response Time</h4>
+            <p class="text-zinc-700">Usually within 24 hours • Urgent matters same day</p>
+          </div>
+          <div>
+            <div class="text-5xl mb-4">📍</div>
+            <h4 class="font-semibold text-xl mb-2">Location</h4>
+            <p class="text-zinc-700">[Your City / State, e.g. Lagos, Nigeria] • Mobile services available</p>
+          </div>
+          <div>
+            <div class="text-5xl mb-4">🤝</div>
+            <h4 class="font-semibold text-xl mb-2">Availability</h4>
+            <p class="text-zinc-700">Flexible scheduling • Weekdays, evenings & weekends by arrangement</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="text-center mt-16">
+        <h3 class="text-3xl font-bold mb-6">Let's Start a Conversation</h3>
+        <p class="text-xl text-zinc-600 mb-10 max-w-3xl mx-auto">
+          Drop me a message — whether it's business, collaboration, or just to connect.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="mailto:your.email@domain.com" 
+             class="inline-flex items-center gap-3 bg-zinc-800 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-black transition">
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
+          <a href="tel:+234xxxxxxxxxx" 
+             class="inline-flex items-center gap-3 bg-green-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-green-700 transition">
+            <i class="fas fa-phone"></i> Call / WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
+             class="inline-flex items-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-blue-800 transition">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-zinc-900 text-white/80 py-12 text-center text-sm border-t border-zinc-800">
+      © March 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
+    </footer>
+
+  </main>
+
+  <script>
+    function toggleDropdown(btn) {
+      const group = btn.parentElement;
+      group.classList.toggle('dropdown-active');
+      document.querySelectorAll('.group').forEach(el => {
+        if (el !== group) el.classList.remove('dropdown-active');
+      });
+    }
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.group')) {
+        document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
+      }
+    });
+  </script>
+
 </body>
 </html>
