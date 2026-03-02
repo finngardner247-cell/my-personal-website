@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Francis Obinna Madubuike – Academic Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
+    .dropdown-content { display: none; }
+    .dropdown-active .dropdown-content { display: block; }
+  </style>
+</head>
+<body class="bg-zinc-50 flex min-h-screen">
+
+  <!-- FIXED SIDEBAR (consistent across site) -->
+  <aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
+    <div class="p-8 sticky top-0 bg-white border-b">
+      <div class="flex flex-col items-center text-center">
+        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" 
+             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
+        <p class="text-blue-600 font-medium text-lg mt-1">Construction Informatics | Digital Twins | Project Management | Researcher</p>
+      </div>
+    </div>
+    <div class="p-8 space-y-10">
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
+        <p class="text-zinc-700 leading-relaxed text-[15px]">
+          Doctoral candidate and active researcher in digital twins, intelligent buildings, cyber-physical systems, 
+          and construction informatics. Published multiple peer-reviewed papers, presented at international conferences, 
+          and contributed to advancing digital transformation in the built environment through rigorous academic inquiry.
+        </p>
+      </div>
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
+        <div class="space-y-4 text-base mt-4">
+          <a href="mailto:your.email@domain.com" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-envelope w-5 text-zinc-500"></i> your.email@domain.com
+          </a>
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
+             class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fab fa-linkedin w-5 text-zinc-500"></i> LinkedIn
+          </a>
+          <a href="tel:+234xxxxxxxxxx" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-phone w-5 text-zinc-500"></i> +234 xxx xxx xxxx
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 ml-80">
+
+    <!-- TOP NAVIGATION -->
+    <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
+      <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+        <div class="flex items-center gap-10 text-lg font-medium">
+          <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 text-blue-600 font-semibold">
+              Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
+              <a href="resume-pm.html" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
+              <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50 font-medium">Academic</a>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
+              Services <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
+              <a href="services-courses.html" class="block px-6 py-2.5 hover:bg-zinc-50">Course Facilitation</a>
+              <a href="services-notary.html" class="block px-6 py-2.5 hover:bg-zinc-50">Notary Public</a>
+              <a href="services-cleaning.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
+              <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
+            </div>
+          </div>
+
+          <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
+        </div>
+        <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+      </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="bg-gradient-to-br from-purple-50 to-indigo-50 py-20 md:py-28 border-b border-zinc-200">
+      <div class="max-w-5xl mx-auto px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Academic Resume</h1>
+        <p class="text-xl md:text-2xl text-zinc-700 max-w-3xl mx-auto mb-10">
+          Focused academic profile: education, research output, publications, conference presentations, 
+          and scholarly contributions in digital twins, construction informatics, and intelligent buildings.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="assets/resume.pdf" target="_blank"
+             class="inline-flex items-center gap-3 bg-purple-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-purple-700 transition shadow-lg">
+            <i class="fas fa-file-pdf"></i> Download Full PDF
+          </a>
+          <a href="assets/resume.docx" target="_blank"
+             class="inline-flex items-center gap-3 bg-zinc-800 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-zinc-900 transition shadow-lg">
+            <i class="fas fa-file-word"></i> Download DOCX
+          </a>
+          <a href="resume-pm.html"
+             class="inline-flex items-center gap-3 bg-green-600 text-white px-8 py-4 rounded-2xl font-medium hover:bg-green-700 transition">
+            ← View Project Management Focus
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIC TIMELINE & HIGHLIGHTS -->
+    <section class="max-w-5xl mx-auto px-6 md:px-8 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Academic & Research Background</h2>
+
+      <div class="space-y-16 relative before:absolute before:left-8 md:before:left-1/2 before:top-0 before:bottom-0 before:w-1 before:bg-zinc-200 before:transform md:before:-translate-x-1/2">
+
+        <!-- Doctoral / Current Studies -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
+          <div class="md:w-1/2 md:text-right pr-0 md:pr-12">
+            <div class="text-xl md:text-2xl font-bold text-zinc-800">202X – Present</div>
+            <div class="text-lg font-semibold text-purple-700">PhD Candidate / Doctoral Researcher</div>
+            <div class="text-zinc-600">[University / Department – e.g. Construction Management / Informatics]</div>
+          </div>
+          <div class="absolute left-6 md:left-1/2 w-5 h-5 rounded-full bg-purple-600 border-4 border-white z-10 transform md:-translate-x-1/2"></div>
+          <div class="md:w-1/2 pl-0 md:pl-12">
+            <ul class="list-disc list-inside text-zinc-700 space-y-2 text-[15px]">
+              <li>Research focus: Digital Twins for Constructed Facilities and Intelligent Buildings</li>
+              <li>Developing frameworks for cyber-physical systems integration in construction</li>
+              <li>Published multiple peer-reviewed articles and conference papers</li>
+              <li>Collaborating with international researchers and industry partners</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Previous Degree / Masters -->
+        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-8 md:gap-12">
+          <div class="md:w-1/2 md:text-left pl-0 md:pl-12">
+            <div class="text-xl md:text-2xl font-bold text-zinc-800">20XX – 20XX</div>
+            <div class="text-lg font-semibold text-purple-700">MSc / Master’s Degree</div>
+            <div class="text-zinc-600">[University – Field of Study]</div>
+          </div>
+          <div class="absolute left-6 md:left-1/2 w-5 h-5 rounded-full bg-purple-600 border-4 border-white z-10 transform md:-translate-x-1/2"></div>
+          <div class="md:w-1/2 pr-0 md:pr-12">
+            <ul class="list-disc list-inside text-zinc-700 space-y-2 text-[15px]">
+              <li>Thesis / major project: [Brief title or focus]</li>
+              <li>Relevant coursework: [e.g. Construction IT, Research Methods, BIM, etc.]</li>
+              <li>[Any awards, GPA/distinction, or key achievements]</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bachelor’s or earlier -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
+          <div class="md:w-1/2 md:text-right pr-0 md:pr-12">
+            <div class="text-xl md:text-2xl font-bold text-zinc-800">20XX – 20XX</div>
+            <div class="text-lg font-semibold text-purple-700">BSc / Bachelor’s Degree</div>
+            <div class="text-zinc-600">[University – Field of Study]</div>
+          </div>
+          <div class="absolute left-6 md:left-1/2 w-5 h-5 rounded-full bg-purple-600 border-4 border-white z-10 transform md:-translate-x-1/2"></div>
+          <div class="md:w-1/2 pl-0 md:pl-12">
+            <ul class="list-disc list-inside text-zinc-700 space-y-2 text-[15px]">
+              <li>Final year project: [Brief description]</li>
+              <li>[Relevant honors, scholarships, or extracurricular academic roles]</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Add more entries (e.g. certifications, visiting researcher roles, etc.) -->
+
+      </div>
+
+      <!-- Publications Snapshot -->
+      <div class="mt-20">
+        <h3 class="text-2xl md:text-3xl font-bold text-center mb-10">Selected Publications & Scholarly Output</h3>
+        <p class="text-center text-zinc-600 mb-10 max-w-3xl mx-auto">
+          For complete list and citations see <a href="https://scholar.google.com/citations?user=QBShdWgAAAAJ&hl=en" target="_blank" class="text-purple-600 hover:underline">Google Scholar profile</a>.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-7 rounded-xl shadow border border-zinc-100">
+            <h4 class="font-semibold text-lg mb-3">A review of digital twin applications in construction (2022)</h4>
+            <p class="text-zinc-600 text-sm mb-3">Journal / Conference: [e.g. Journal of Information Technology in Construction]</p>
+            <p class="text-zinc-700 text-sm">Citations: [number if known] • Co-authors: [if applicable]</p>
+          </div>
+
+          <div class="bg-white p-7 rounded-xl shadow border border-zinc-100">
+            <h4 class="font-semibold text-lg mb-3">Review of Digital Twins for Constructed Facilities (2022)</h4>
+            <p class="text-zinc-600 text-sm mb-3">Journal: Buildings (MDPI)</p>
+            <p class="text-zinc-700 text-sm">Key contribution: Systematic identification of research streams</p>
+          </div>
+
+          <!-- Add 4–6 more recent/impactful publications here -->
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="https://scholar.google.com/citations?user=QBShdWgAAAAJ&hl=en" target="_blank"
+             class="inline-flex items-center gap-3 bg-purple-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-purple-700 transition shadow-lg">
+            <i class="fas fa-graduation-cap"></i> Full Publications List on Google Scholar
+          </a>
+        </div>
+      </div>
+
+      <!-- Optional: Conferences / Presentations / Teaching -->
+      <div class="mt-20">
+        <h3 class="text-2xl md:text-3xl font-bold text-center mb-10">Conference Presentations & Academic Activities</h3>
+        <ul class="max-w-4xl mx-auto space-y-6 text-zinc-700 list-disc pl-6 text-[15px]">
+          <li>[Year] – [Conference Name], [Location / Virtual]: Paper titled "[Title]"</li>
+          <li>[Year] – Guest lecture / workshop on [Topic] at [Institution]</li>
+          <li>[Year] – Peer reviewer for [Journal / Conference]</li>
+          <!-- Add real entries -->
+        </ul>
+      </div>
+
+    </section>
+
+    <footer class="bg-zinc-900 text-white/80 py-12 text-center text-sm border-t border-zinc-800">
+      © March 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
+    </footer>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleDropdown(btn) {
+      const group = btn.parentElement;
+      group.classList.toggle('dropdown-active');
+      document.querySelectorAll('.group').forEach(el => {
+        if (el !== group) el.classList.remove('dropdown-active');
+      });
+    }
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.group')) {
+        document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
+      }
+    });
+  </script>
+
+</body>
+</html>
