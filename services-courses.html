@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Francis Obinna Madubuike – Course Facilitation Services</title>
+  <title>Francis Obinna Madubuike – Course Facilitation</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
     .sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
@@ -15,14 +13,23 @@
     .dropdown-active .dropdown-content { display: block; }
   </style>
 </head>
-<body class="bg-zinc-50 flex min-h-screen">
+<body class="bg-zinc-50 min-h-screen">
 
-  <!-- FIXED SIDEBAR -->
-  <aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
-    <div class="p-8 sticky top-0 bg-white border-b">
+  <!-- Hamburger -->
+  <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg focus:outline-none">
+    <i class="fas fa-bars text-2xl text-zinc-800"></i>
+  </button>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="
+    fixed inset-y-0 left-0 z-40 w-80 bg-white border-r border-zinc-200 overflow-y-auto shadow-2xl
+    transform -translate-x-full transition-transform duration-300 ease-in-out
+    md:translate-x-0 md:relative md:inset-auto md:shadow-none md:border-r md:h-auto
+  ">
+    <!-- sidebar content (same as other pages) -->
+    <div class="p-8 sticky top-0 bg-white border-b md:border-b-0">
       <div class="flex flex-col items-center text-center">
-        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" 
-             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
         <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
         <p class="text-blue-600 font-medium text-lg mt-1">Construction Informatics | Digital Twins | Project Management | Researcher</p>
       </div>
@@ -42,8 +49,7 @@
           <a href="mailto:your.email@domain.com" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
             <i class="fas fa-envelope w-5 text-zinc-500"></i> your.email@domain.com
           </a>
-          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
-             class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
             <i class="fab fa-linkedin w-5 text-zinc-500"></i> LinkedIn
           </a>
           <a href="tel:+234xxxxxxxxxx" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
@@ -54,15 +60,18 @@
     </div>
   </aside>
 
-  <!-- MAIN CONTENT -->
-  <main class="flex-1 ml-80">
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"></div>
 
-    <!-- TOP NAVIGATION -->
+  <!-- MAIN -->
+  <main id="main-content" class="flex-1 transition-all duration-300 md:ml-80">
+
     <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
-      <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-        <div class="flex items-center gap-10 text-lg font-medium">
-          <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-xl sm:text-2xl font-bold text-blue-600">Francis Obinna</a>
 
+        <div class="hidden md:flex items-center gap-8 lg:gap-10 text-base lg:text-lg font-medium">
+          <a href="index.html" class="hover:text-blue-600 transition">Home</a>
           <div class="relative group">
             <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
               Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
@@ -72,7 +81,6 @@
               <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
             </div>
           </div>
-
           <div class="relative group">
             <button onclick="toggleDropdown(this)" class="flex items-center gap-1 text-blue-600 font-semibold">
               Services <i class="fas fa-chevron-down text-xs ml-1"></i>
@@ -84,131 +92,111 @@
               <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
             </div>
           </div>
-
           <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
         </div>
-        <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+
+        <a href="assets/resume.pdf" target="_blank" class="text-sm sm:text-base text-zinc-500 hover:text-blue-600 hidden sm:block">
+          ↓ PDF Resume
+        </a>
       </div>
     </nav>
 
-    <!-- SERVICE HEADER -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-20 md:py-28 border-b border-zinc-200">
-      <div class="max-w-5xl mx-auto px-8 text-center">
+    <!-- Header -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 sm:py-20 md:py-28 border-b border-zinc-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="text-6xl mb-6">📚</div>
-        <h1 class="text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Course Facilitation</h1>
-        <p class="text-xl md:text-2xl text-zinc-700 max-w-4xl mx-auto mb-10 leading-relaxed">
-          Interactive, research-informed training and facilitation in project management, research methodology, 
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Course Facilitation</h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-zinc-700 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed">
+          Interactive, research-informed training in project management, research methodology, 
           construction digitalization, data analysis, and related professional skills.
         </p>
-
-        <a href="contact.html"
-           class="inline-flex items-center gap-3 bg-blue-600 text-white px-12 py-6 rounded-2xl font-semibold text-xl hover:bg-blue-700 transition shadow-lg">
+        <a href="contact.html" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg hover:bg-blue-700 transition shadow-lg">
           <i class="fas fa-calendar-check"></i> Book a Session / Request Quote
         </a>
       </div>
     </section>
 
-    <!-- MAIN SERVICE CONTENT -->
-    <section class="max-w-5xl mx-auto px-6 md:px-8 py-16">
-      <div class="prose prose-lg max-w-none text-zinc-700">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">What I Offer</h2>
+    <!-- Main content -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10">What I Offer</h2>
 
-        <p class="text-center mb-12 text-lg">
-          Tailored workshops, short courses, seminars, and training sessions designed for professionals, 
-          students, researchers, construction firms, academic institutions, and organizations seeking to build capacity 
-          in modern construction practices and research skills.
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-blue-700">Leadership & Project Management</h3>
+          <ul class="list-disc list-inside space-y-2 text-sm sm:text-[15px]">
+            <li>Modern PM frameworks for construction/digital projects</li>
+            <li>Risk management & stakeholder coordination</li>
+            <li>Agile vs traditional approaches</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-blue-700">Research Methodology</h3>
+          <ul class="list-disc list-inside space-y-2 text-sm sm:text-[15px]">
+            <li>Research design & literature reviews</li>
+            <li>Qualitative & quantitative methods</li>
+            <li>Academic writing & publication strategies</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-blue-700">Digital Twins & Construction 4.0</h3>
+          <ul class="list-disc list-inside space-y-2 text-sm sm:text-[15px]">
+            <li>Fundamentals & real-world applications</li>
+            <li>Integration with BIM, IoT, CPS</li>
+            <li>Case studies & future trends</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-blue-700">Data Analysis & Visualization</h3>
+          <ul class="list-disc list-inside space-y-2 text-sm sm:text-[15px]">
+            <li>Excel, Power BI, basic Python/R</li>
+            <li>Project dashboards & KPI tracking</li>
+            <li>Data interpretation for stakeholders</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-6">Ready to Upskill?</h3>
+        <p class="text-base sm:text-lg text-zinc-600 mb-8 max-w-3xl mx-auto">
+          Custom workshops, online/in-person sessions, group or individual training available.
         </p>
-
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
-          <!-- Course 1 -->
-          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-            <h3 class="text-2xl font-bold mb-4 text-blue-700">Leadership & Project Management in Construction</h3>
-            <ul class="list-disc list-inside space-y-2 text-[15px]">
-              <li>Modern PM frameworks adapted to construction and digital projects</li>
-              <li>Risk identification, mitigation, and contingency planning</li>
-              <li>Stakeholder management and communication in multidisciplinary teams</li>
-              <li>Agile vs. traditional approaches in built environment projects</li>
-            </ul>
-          </div>
-
-          <!-- Course 2 -->
-          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-            <h3 class="text-2xl font-bold mb-4 text-blue-700">Research Methodology & Academic Writing</h3>
-            <ul class="list-disc list-inside space-y-2 text-[15px]">
-              <li>Designing robust research questions and objectives</li>
-              <li>Literature review strategies and systematic review methods</li>
-              <li>Qualitative & quantitative data collection and analysis</li>
-              <li>Academic writing, structuring papers, responding to reviewers</li>
-            </ul>
-          </div>
-
-          <!-- Course 3 -->
-          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-            <h3 class="text-2xl font-bold mb-4 text-blue-700">Digital Twins & Construction 4.0</h3>
-            <ul class="list-disc list-inside space-y-2 text-[15px]">
-              <li>Fundamentals of digital twins in the built environment</li>
-              <li>Applications in design, construction, operations & maintenance</li>
-              <li>Integration with BIM, IoT, and cyber-physical systems</li>
-              <li>Case studies and emerging trends (2025–2030 outlook)</li>
-            </ul>
-          </div>
-
-          <!-- Course 4 -->
-          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-            <h3 class="text-2xl font-bold mb-4 text-blue-700">Data Analysis & Visualization for Construction</h3>
-            <ul class="list-disc list-inside space-y-2 text-[15px]">
-              <li>Excel, Power BI, Python/R basics for construction data</li>
-              <li>Project performance dashboards and KPI tracking</li>
-              <li>Statistical methods for delay/risk analysis</li>
-              <li>Interpreting and presenting data to stakeholders</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Who it's for + Benefits -->
-        <div class="bg-zinc-100 rounded-2xl p-10 md:p-12 mb-16">
-          <h2 class="text-3xl font-bold text-center mb-8">Who Should Attend?</h2>
-          <div class="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div class="text-5xl mb-4">👷</div>
-              <h4 class="font-semibold text-xl mb-2">Construction Professionals</h4>
-              <p class="text-zinc-700">Project managers, site engineers, quantity surveyors, BIM coordinators</p>
-            </div>
-            <div>
-              <div class="text-5xl mb-4">🎓</div>
-              <h4 class="font-semibold text-xl mb-2">Students & Early-Career Researchers</h4>
-              <p class="text-zinc-700">Postgraduate students, PhD candidates, junior academics</p>
-            </div>
-            <div>
-              <div class="text-5xl mb-4">🏢</div>
-              <h4 class="font-semibold text-xl mb-2">Organizations & Firms</h4>
-              <p class="text-zinc-700">Training departments, HR teams, professional development programs</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="text-center">
-          <h3 class="text-3xl font-bold mb-6">Ready to Upskill Your Team or Yourself?</h3>
-          <p class="text-xl text-zinc-600 mb-10 max-w-3xl mx-auto">
-            Sessions can be delivered in-person, online (Zoom/Teams), or hybrid. Custom durations (half-day to multi-week) and group sizes available.
-          </p>
-          <a href="contact.html"
-             class="inline-flex items-center gap-3 bg-blue-600 text-white px-12 py-6 rounded-2xl font-semibold text-xl hover:bg-blue-700 transition shadow-lg">
-            <i class="fas fa-envelope"></i> Contact Me to Discuss Your Training Needs
-          </a>
-        </div>
+        <a href="contact.html" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg hover:bg-blue-700 transition shadow-lg">
+          <i class="fas fa-envelope"></i> Contact Me to Discuss Training Needs
+        </a>
       </div>
     </section>
 
-    <footer class="bg-zinc-900 text-white/80 py-12 text-center text-sm border-t border-zinc-800">
-      © March 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
+    <footer class="bg-zinc-900 text-white/80 py-8 sm:py-10 text-center text-sm border-t border-zinc-800">
+      © 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
     </footer>
 
   </main>
 
   <!-- JavaScript -->
   <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    if (overlay) overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) toggleMenu();
+      });
+    });
+
     function toggleDropdown(btn) {
       const group = btn.parentElement;
       group.classList.toggle('dropdown-active');
