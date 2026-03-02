@@ -1,165 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Services</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: system-ui, -apple-system, sans-serif; }
-        .sidebar { scrollbar-width: thin; }
-        .dropdown-content { display: none; }
-        .dropdown-active .dropdown-content { display: block; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Francis Obinna Madubuike – Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
+    .dropdown-content { display: none; }
+    .dropdown-active .dropdown-content { display: block; }
+  </style>
 </head>
-<body class="bg-zinc-50 flex min-h-screen">
+<body class="bg-zinc-50 min-h-screen">
 
-<!-- FIXED SIDEBAR – no download buttons -->
-<aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
-    <div class="p-8 sticky top-0 bg-white border-b">
-        <div class="flex flex-col items-center text-center">
-            <img src="profile.jpg" alt="Profile Photo" 
-                 class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
-            <h1 class="text-3xl font-bold text-zinc-900">Your Full Name</h1>
-            <p class="text-blue-600 font-medium text-lg mt-1">
-                Project Manager | Researcher | Multi-Service Professional
-            </p>
-        </div>
+  <!-- Hamburger button – visible only on mobile -->
+  <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg focus:outline-none">
+    <i class="fas fa-bars text-2xl text-zinc-800"></i>
+  </button>
+
+  <!-- Sidebar – hidden on mobile by default -->
+  <aside id="sidebar" class="
+    fixed inset-y-0 left-0 z-40 w-80 bg-white border-r border-zinc-200 overflow-y-auto shadow-2xl
+    transform -translate-x-full transition-transform duration-300 ease-in-out
+    md:translate-x-0 md:relative md:inset-auto md:shadow-none md:border-r md:h-auto
+  ">
+    <div class="p-8 sticky top-0 bg-white border-b md:border-b-0">
+      <div class="flex flex-col items-center text-center">
+        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" 
+             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
+        <p class="text-blue-600 font-medium text-lg mt-1">Construction Informatics | Digital Twins | Project Management | Researcher</p>
+      </div>
     </div>
     
     <div class="p-8 space-y-10">
-        <div>
-            <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
-            <p class="text-zinc-700 leading-relaxed text-[15px]">
-                Professional summary goes here (4–6 sentences). 
-                Experienced in project management, academic research, training facilitation, 
-                notary services, professional cleaning, and photography.
-            </p>
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
+        <p class="text-zinc-700 leading-relaxed text-[15px]">
+          Multi-skilled professional offering services in course facilitation, notary public, 
+          professional cleaning, and photography — alongside research and project management expertise.
+        </p>
+      </div>
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
+        <div class="space-y-4 text-base mt-4">
+          <a href="mailto:your.email@domain.com" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-envelope w-5 text-zinc-500"></i> your.email@domain.com
+          </a>
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
+             class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fab fa-linkedin w-5 text-zinc-500"></i> LinkedIn
+          </a>
+          <a href="tel:+234xxxxxxxxxx" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-phone w-5 text-zinc-500"></i> +234 xxx xxx xxxx
+          </a>
         </div>
-
-        <div>
-            <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
-            <div class="space-y-4 text-base mt-4">
-                <a href="mailto:your.email@example.com" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fas fa-envelope w-5 text-zinc-500"></i>
-                    your.email@example.com
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fab fa-linkedin w-5 text-zinc-500"></i>
-                    LinkedIn Profile
-                </a>
-                <a href="tel:+1234567890" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fas fa-phone w-5 text-zinc-500"></i>
-                    +123 456 7890
-                </a>
-                <!-- Add WhatsApp or other links here if desired -->
-            </div>
-        </div>
+      </div>
     </div>
-</aside>
+  </aside>
 
-        <!-- TOP NAV -->
-        <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
-            <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-                <div class="flex items-center gap-10 text-lg font-medium">
-                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+  <!-- Overlay to close menu on mobile -->
+  <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"></div>
 
-                    <div class="relative group">
-                        <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
-                            Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
-                        </button>
-                        <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
-                            <a href="resume.html#pm" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
-                            <a href="resume.html#academic" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
-                        </div>
-                    </div>
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="flex-1 transition-all duration-300 md:ml-80">
 
-                    <div class="relative group">
-                        <button onclick="toggleDropdown(this)" class="flex items-center gap-1 text-blue-600 font-semibold">
-                            Services <i class="fas fa-chevron-down text-xs ml-1"></i>
-                        </button>
-                        <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50 font-medium">All Services</a>
-                            <div class="px-6 py-2 text-xs uppercase text-zinc-400 mt-1">Course Facilitator</div>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Leadership & Project Management</a>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Research Methodology</a>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Data Analysis</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50 mt-1">Notary Public</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
-                        </div>
-                    </div>
+    <!-- TOP NAVIGATION -->
+    <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-xl sm:text-2xl font-bold text-blue-600">Francis Obinna</a>
 
-                    <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
-                </div>
-                <a href="resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+        <!-- Desktop nav links -->
+        <div class="hidden md:flex items-center gap-8 lg:gap-10 text-base lg:text-lg font-medium">
+          <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
+              Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
+              <a href="resume-pm.html" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
+              <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
             </div>
-        </nav>
+          </div>
 
-        <section class="py-16 bg-zinc-50">
-            <div class="max-w-5xl mx-auto px-8">
-                <h1 class="text-5xl font-bold mb-3">Services</h1>
-                <p class="text-xl text-zinc-600 mb-14">Professional solutions tailored to your needs</p>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-2xl p-10 shadow hover:shadow-xl transition">
-                        <div class="text-6xl mb-6">📚</div>
-                        <h2 class="text-3xl font-bold mb-5">Course Facilitation</h2>
-                        <ul class="space-y-4 text-zinc-700 text-lg">
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> Leadership & Project Management</li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> Research Methodology</li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> Data Analysis & Interpretation</li>
-                            <!-- add more courses -->
-                        </ul>
-                        <a href="contact.html" class="mt-10 block w-full bg-blue-600 text-white text-center py-4 rounded-xl font-semibold hover:bg-blue-700 transition">Book a Session</a>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-10 shadow hover:shadow-xl transition">
-                        <div class="text-6xl mb-6">📜</div>
-                        <h2 class="text-3xl font-bold mb-5">Notary Public</h2>
-                        <p class="text-zinc-600 mb-8 text-lg">Document authentication, affidavits, statutory declarations, oaths & certifications with quick turnaround.</p>
-                        <a href="contact.html" class="block w-full bg-blue-600 text-white text-center py-4 rounded-xl font-semibold hover:bg-blue-700 transition">Request Notarization</a>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-10 shadow hover:shadow-xl transition">
-                        <div class="text-6xl mb-6">🧼</div>
-                        <h2 class="text-3xl font-bold mb-5">Cleaning Services</h2>
-                        <p class="text-zinc-600 mb-8 text-lg">Residential, office, post-construction and deep cleaning using safe, eco-friendly products.</p>
-                        <a href="contact.html" class="block w-full bg-blue-600 text-white text-center py-4 rounded-xl font-semibold hover:bg-blue-700 transition">Get a Quote</a>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-10 shadow hover:shadow-xl transition">
-                        <div class="text-6xl mb-6">📸</div>
-                        <h2 class="text-3xl font-bold mb-5">Photography</h2>
-                        <p class="text-zinc-600 mb-8 text-lg">Events, portraits, product shoots, corporate headshots – professional editing included.</p>
-                        <a href="contact.html" class="block w-full bg-blue-600 text-white text-center py-4 rounded-xl font-semibold hover:bg-blue-700 transition">View Portfolio / Book</a>
-                    </div>
-                </div>
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 text-blue-600 font-semibold">
+              Services <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
+              <a href="services-courses.html" class="block px-6 py-2.5 hover:bg-zinc-50">Course Facilitation</a>
+              <a href="services-notary.html" class="block px-6 py-2.5 hover:bg-zinc-50">Notary Public</a>
+              <a href="services-cleaning.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
+              <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
             </div>
-        </section>
+          </div>
 
-        <footer class="bg-zinc-900 text-white/80 py-10 text-center text-sm">
-            © 2026 Your Full Name • Hosted on GitHub Pages
-        </footer>
-    </main>
+          <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
+        </div>
 
-    <script>
-        function toggleDropdown(btn) {
-            const group = btn.closest('.group') || btn.parentElement;
-            group.classList.toggle('dropdown-active');
-            document.querySelectorAll('.group').forEach(el => {
-                if (el !== group) el.classList.remove('dropdown-active');
-            });
-        }
-        document.addEventListener('click', e => {
-            if (!e.target.closest('.group')) {
-                document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
-            }
-        });
-    </script>
+        <a href="assets/resume.pdf" target="_blank" class="text-sm sm:text-base text-zinc-500 hover:text-blue-600 hidden sm:block">
+          ↓ PDF Resume
+        </a>
+      </div>
+    </nav>
+
+    <!-- SERVICES OVERVIEW HEADER -->
+    <section class="bg-gradient-to-br from-gray-50 to-zinc-100 py-16 sm:py-20 md:py-28 border-b border-zinc-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-6xl mb-6">🛠️</div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 mb-4">My Services</h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-zinc-700 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed">
+          Professional solutions in training, legal certification, cleaning, and visual storytelling — 
+          delivered with reliability and attention to detail.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
+        <!-- Course Facilitation -->
+        <a href="services-courses.html" class="group bg-white rounded-2xl shadow hover:shadow-2xl transition overflow-hidden border border-zinc-100">
+          <div class="bg-blue-50 p-8 sm:p-10 text-center">
+            <div class="text-6xl mb-4">📚</div>
+            <h3 class="text-xl sm:text-2xl font-bold text-blue-700 mb-3">Course Facilitation</h3>
+            <p class="text-zinc-600 text-sm sm:text-base">
+              Leadership, project management, research methodology, digital twins & construction 4.0 training.
+            </p>
+          </div>
+          <div class="p-6 sm:p-8">
+            <p class="text-zinc-700 mb-4 text-sm sm:text-base">Interactive workshops • Professional development • Custom sessions</p>
+            <span class="inline-flex items-center text-blue-600 font-medium group-hover:underline">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Notary Public -->
+        <a href="services-notary.html" class="group bg-white rounded-2xl shadow hover:shadow-2xl transition overflow-hidden border border-zinc-100">
+          <div class="bg-slate-50 p-8 sm:p-10 text-center">
+            <div class="text-6xl mb-4">📜</div>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-3">Notary Public</h3>
+            <p class="text-zinc-600 text-sm sm:text-base">
+              Document authentication • Oaths • Affidavits • Certified copies • Fast & reliable service.
+            </p>
+          </div>
+          <div class="p-6 sm:p-8">
+            <p class="text-zinc-700 mb-4 text-sm sm:text-base">Legal documents • Urgent notarizations • Mobile service available</p>
+            <span class="inline-flex items-center text-slate-700 font-medium group-hover:underline">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Cleaning Services -->
+        <a href="services-cleaning.html" class="group bg-white rounded-2xl shadow hover:shadow-2xl transition overflow-hidden border border-zinc-100">
+          <div class="bg-teal-50 p-8 sm:p-10 text-center">
+            <div class="text-6xl mb-4">🧼🧹</div>
+            <h3 class="text-xl sm:text-2xl font-bold text-teal-700 mb-3">Cleaning Services</h3>
+            <p class="text-zinc-600 text-sm sm:text-base">
+              Residential • Office • Deep cleaning • Post-construction • Eco-friendly options.
+            </p>
+          </div>
+          <div class="p-6 sm:p-8">
+            <p class="text-zinc-700 mb-4 text-sm sm:text-base">Regular & one-time cleans • Move-in/out • Satisfaction guarantee</p>
+            <span class="inline-flex items-center text-teal-600 font-medium group-hover:underline">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Photography -->
+        <a href="services-photography.html" class="group bg-white rounded-2xl shadow hover:shadow-2xl transition overflow-hidden border border-zinc-100">
+          <div class="bg-amber-50 p-8 sm:p-10 text-center">
+            <div class="text-6xl mb-4">📸</div>
+            <h3 class="text-xl sm:text-2xl font-bold text-amber-700 mb-3">Photography</h3>
+            <p class="text-zinc-600 text-sm sm:text-base">
+              Events • Portraits • Headshots • Construction progress • Product & real estate.
+            </p>
+          </div>
+          <div class="p-6 sm:p-8">
+            <p class="text-zinc-700 mb-4 text-sm sm:text-base">Professional editing • Fast delivery • Custom packages</p>
+            <span class="inline-flex items-center text-amber-600 font-medium group-hover:underline">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="text-center mt-12 sm:mt-16">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-6">Interested in Any of These Services?</h3>
+        <p class="text-base sm:text-lg text-zinc-600 mb-8 max-w-3xl mx-auto">
+          Get in touch to discuss your needs, get a quote, or book an appointment.
+        </p>
+        <a href="contact.html" 
+           class="inline-flex items-center gap-3 bg-zinc-800 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg hover:bg-black transition shadow-lg">
+          <i class="fas fa-envelope"></i> Contact Me Today
+        </a>
+      </div>
+    </section>
+
+    <footer class="bg-zinc-900 text-white/80 py-8 sm:py-10 text-center text-sm border-t border-zinc-800">
+      © 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
+    </footer>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    if (overlay) overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) toggleMenu();
+      });
+    });
+
+    function toggleDropdown(btn) {
+      const group = btn.parentElement;
+      group.classList.toggle('dropdown-active');
+      document.querySelectorAll('.group').forEach(el => {
+        if (el !== group) el.classList.remove('dropdown-active');
+      });
+    }
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.group')) {
+        document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
+      }
+    });
+  </script>
+
 </body>
 </html>
