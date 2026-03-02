@@ -29,9 +29,6 @@
     </div>
     <div class="p-8 space-y-10">
       <div>
-        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
-      </div>
-      <div>
         <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
         <div class="space-y-4 text-base mt-4">
           <a href="mailto:your.email@domain.com" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
@@ -85,27 +82,40 @@
       </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero-bg text-white py-32 md:py-40">
-      <div class="max-w-5xl mx-auto px-8 text-center">
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight">Hello, I'm Francis Obinna Madubuike</h1>
-        <p class="text-zinc-700 leading-relaxed text-[15px]">
-          Doctoral candidate and researcher specializing in digital twins for the built environment, intelligent buildings, and cyber-physical systems integration.
-          My work focuses on improving project delivery, facilities management, and digital transformation in construction through systematic reviews, case studies, and applied research.
-          I also provide professional services in training facilitation, notary public, cleaning, and photography.
-        </p>
-        <div class="mt-12 flex flex-wrap justify-center gap-6">
-          <button onclick="showModal('resumeModal')"
-                  class="bg-white text-blue-700 px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-zinc-100 transition shadow-lg">
-            View Resume
-          </button>
-          <button onclick="showModal('servicesModal')"
-                  class="border-2 border-white/80 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-white/10 transition">
-            Explore Services
-          </button>
-        </div>
-      </div>
-    </section>
+<!-- HERO -->
+<section class="hero-bg text-white py-32 md:py-40">
+  <div class="max-w-5xl mx-auto px-8 text-center">
+    <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+      Hello, I'm Francis Obinna Madubuike
+    </h1>
+
+    <!-- Bio paragraph – now white + better readability + appropriate size -->
+    <p class="mt-8 text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
+      Doctoral candidate and researcher specializing in digital twins for the built environment, 
+      intelligent buildings, and cyber-physical systems integration.
+      <br class="hidden md:block" />
+      My work focuses on improving project delivery, facilities management, and digital transformation 
+      in construction through systematic reviews, case studies, and applied research.
+      <br class="hidden md:block" />
+      I also provide professional services in training facilitation, notary public, cleaning, and photography.
+    </p>
+
+    <div class="mt-12 flex flex-wrap justify-center gap-6">
+      <button 
+        onclick="showModal('resumeModal')"
+        class="bg-white text-blue-700 px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-zinc-100 transition shadow-lg"
+      >
+        View Resume
+      </button>
+      <button 
+        onclick="showModal('servicesModal')"
+        class="border-2 border-white/80 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-white/10 transition"
+      >
+        Explore Services
+      </button>
+    </div>
+  </div>
+</section>
 
     <!-- MODALS -->
     <div id="resumeModal" class="modal">
