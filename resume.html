@@ -1,167 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Resume</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: system-ui, -apple-system, sans-serif; }
-        .sidebar { scrollbar-width: thin; }
-        .dropdown-content { display: none; }
-        .dropdown-active .dropdown-content { display: block; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Francis Obinna Madubuike – Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
+    .dropdown-content { display: none; }
+    .dropdown-active .dropdown-content { display: block; }
+  </style>
 </head>
 <body class="bg-zinc-50 flex min-h-screen">
 
-<!-- FIXED SIDEBAR – no download buttons -->
-<aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
+  <!-- FIXED SIDEBAR (identical to index.html) -->
+  <aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
     <div class="p-8 sticky top-0 bg-white border-b">
-        <div class="flex flex-col items-center text-center">
-            <img src="profile.jpg" alt="Profile Photo" 
-                 class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
-            <h1 class="text-3xl font-bold text-zinc-900">Your Full Name</h1>
-            <p class="text-blue-600 font-medium text-lg mt-1">
-                Project Manager | Researcher | Multi-Service Professional
-            </p>
-        </div>
+      <div class="flex flex-col items-center text-center">
+        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" 
+             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
+        <p class="text-blue-600 font-medium text-lg mt-1">Construction Informatics | Digital Twins | Project Management | Researcher</p>
+      </div>
     </div>
-    
     <div class="p-8 space-y-10">
-        <div>
-            <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
-            <p class="text-zinc-700 leading-relaxed text-[15px]">
-                Professional summary goes here (4–6 sentences). 
-                Experienced in project management, academic research, training facilitation, 
-                notary services, professional cleaning, and photography.
-            </p>
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
+        <p class="text-zinc-700 leading-relaxed text-[15px]">
+          Doctoral candidate and researcher specializing in digital twins for the built environment, intelligent buildings, 
+          and cyber-physical systems integration. My work focuses on improving project delivery, facilities management, 
+          and digital transformation in construction through systematic reviews, case studies, and applied research. 
+          I also provide professional services in training facilitation, notary public, cleaning, and photography.
+        </p>
+      </div>
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
+        <div class="space-y-4 text-base mt-4">
+          <a href="mailto:your.email@domain.com" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-envelope w-5 text-zinc-500"></i> your.email@domain.com
+          </a>
+          <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" 
+             class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fab fa-linkedin w-5 text-zinc-500"></i> LinkedIn
+          </a>
+          <a href="tel:+234xxxxxxxxxx" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
+            <i class="fas fa-phone w-5 text-zinc-500"></i> +234 xxx xxx xxxx
+          </a>
         </div>
-
-        <div>
-            <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
-            <div class="space-y-4 text-base mt-4">
-                <a href="mailto:your.email@example.com" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fas fa-envelope w-5 text-zinc-500"></i>
-                    your.email@example.com
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fab fa-linkedin w-5 text-zinc-500"></i>
-                    LinkedIn Profile
-                </a>
-                <a href="tel:+1234567890" 
-                   class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
-                    <i class="fas fa-phone w-5 text-zinc-500"></i>
-                    +123 456 7890
-                </a>
-                <!-- Add WhatsApp or other links here if desired -->
-            </div>
-        </div>
+      </div>
     </div>
-</aside>
+  </aside>
 
-        <!-- TOP NAV (same as index.html) -->
-        <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
-            <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-                <div class="flex items-center gap-10 text-lg font-medium">
-                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 ml-80">
 
-                    <div class="relative group">
-                        <button onclick="toggleDropdown(this)" class="flex items-center gap-1 text-blue-600 font-semibold">
-                            Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
-                        </button>
-                        <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
-                            <a href="#pm" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
-                            <a href="#academic" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
-                        </div>
-                    </div>
+    <!-- TOP NAVIGATION (same as index.html) -->
+    <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
+      <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+        <div class="flex items-center gap-10 text-lg font-medium">
+          <a href="index.html" class="hover:text-blue-600 transition">Home</a>
 
-                    <div class="relative group">
-                        <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
-                            Services <i class="fas fa-chevron-down text-xs ml-1"></i>
-                        </button>
-                        <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50 font-medium">All Services</a>
-                            <div class="px-6 py-2 text-xs uppercase text-zinc-400 mt-1">Course Facilitator</div>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Leadership & Project Management</a>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Research Methodology</a>
-                            <a href="services.html" class="block px-9 py-1.5 text-sm hover:bg-zinc-50">• Data Analysis</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50 mt-1">Notary Public</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
-                            <a href="services.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
-                        </div>
-                    </div>
-
-                    <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
-                </div>
-                <a href="resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 text-blue-600 font-semibold">
+              Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
+              <a href="resume-pm.html" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
+              <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
             </div>
-        </nav>
+          </div>
 
-        <section class="py-16 bg-white">
-            <div class="max-w-5xl mx-auto px-8">
-                <h1 class="text-5xl font-bold mb-3">Resume</h1>
-                <p class="text-xl text-zinc-600 mb-10">Key professional highlights • Full versions available below</p>
-
-                <div class="flex flex-wrap gap-4 mb-14">
-                    <a href="resume.pdf" target="_blank" class="px-9 py-4 bg-blue-600 text-white rounded-xl font-semibold flex items-center gap-3 hover:bg-blue-700 transition">
-                        <i class="fas fa-file-pdf"></i> Download PDF
-                    </a>
-                    <a href="resume.docx" target="_blank" class="px-9 py-4 bg-zinc-800 text-white rounded-xl font-semibold flex items-center gap-3 hover:bg-zinc-900 transition">
-                        <i class="far fa-file-word"></i> Download DOCX
-                    </a>
-                </div>
-
-                <div id="pm" class="scroll-mt-24 mb-20">
-                    <h2 class="text-3xl font-bold mb-8 flex items-center gap-4"><span class="text-4xl">📊</span> Project Management</h2>
-                    <div class="space-y-10">
-                        <div class="flex gap-10">
-                            <div class="w-32 text-right text-sm text-zinc-500 font-medium">2023 – Present</div>
-                            <div>
-                                <div class="font-semibold text-lg">[Most recent role / project name]</div>
-                                <div class="text-zinc-600">[Organisation] – Key achievement or responsibility</div>
-                            </div>
-                        </div>
-                        <!-- Add more entries here -->
-                    </div>
-                </div>
-
-                <div id="academic" class="scroll-mt-24">
-                    <h2 class="text-3xl font-bold mb-8 flex items-center gap-4"><span class="text-4xl">🎓</span> Academic & Qualifications</h2>
-                    <div class="space-y-10">
-                        <div class="flex gap-10">
-                            <div class="w-32 text-right text-sm text-zinc-500 font-medium">2020 – 2022</div>
-                            <div>
-                                <div class="font-semibold text-lg">[Degree / Certification]</div>
-                                <div class="text-zinc-600">[Institution] – [Thesis / Grade / Focus]</div>
-                            </div>
-                        </div>
-                        <!-- Add more entries here -->
-                    </div>
-                </div>
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
+              Services <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content absolute left-0 bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
+              <a href="services-courses.html" class="block px-6 py-2.5 hover:bg-zinc-50">Course Facilitation</a>
+              <a href="services-notary.html" class="block px-6 py-2.5 hover:bg-zinc-50">Notary Public</a>
+              <a href="services-cleaning.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
+              <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
             </div>
-        </section>
+          </div>
 
-        <footer class="bg-zinc-900 text-white/80 py-10 text-center text-sm">
-            © 2026 Your Full Name • Hosted on GitHub Pages
-        </footer>
-    </main>
+          <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
+        </div>
+        <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+      </div>
+    </nav>
 
-    <script>
-        function toggleDropdown(btn) {
-            const group = btn.closest('.group') || btn.parentElement;
-            group.classList.toggle('dropdown-active');
-            document.querySelectorAll('.group').forEach(el => {
-                if (el !== group) el.classList.remove('dropdown-active');
-            });
-        }
-        document.addEventListener('click', e => {
-            if (!e.target.closest('.group')) {
-                document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
-            }
-        });
-    </script>
+    <!-- RESUME HEADER / OVERVIEW -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-20 md:py-28 border-b border-zinc-200">
+      <div class="max-w-5xl mx-auto px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Professional Resume</h1>
+        <p class="text-xl md:text-2xl text-zinc-700 max-w-3xl mx-auto mb-10">
+          Comprehensive overview of experience, skills, education, and achievements in construction informatics, digital twins, project management, and research.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="assets/resume.pdf" target="_blank"
+             class="inline-flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
+            <i class="fas fa-file-pdf"></i> Download Full PDF
+          </a>
+          <a href="assets/resume.docx" target="_blank"
+             class="inline-flex items-center gap-3 bg-zinc-800 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-zinc-900 transition shadow-lg">
+            <i class="fas fa-file-word"></i> Download DOCX
+          </a>
+        </div>
+
+        <div class="mt-10 text-sm text-zinc-500">
+          Prefer a focused view? Choose from the dropdown above:
+          <span class="font-medium text-blue-600">Project Management</span> or 
+          <span class="font-medium text-blue-600">Academic</span> version.
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL: BRIEF HIGHLIGHTS / KEY POINTS -->
+    <section class="max-w-5xl mx-auto px-8 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Key Highlights</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Example highlight cards – customize or add more -->
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <div class="text-4xl mb-4">🎓</div>
+          <h3 class="text-xl font-semibold mb-3">Research & Publications</h3>
+          <p class="text-zinc-600">Multiple peer-reviewed papers on digital twins in construction and intelligent buildings.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-semibold mb-3">Project Management</h3>
+          <p class="text-zinc-600">Experience delivering complex construction and research projects on time and within budget.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <div class="text-4xl mb-4">🛠️</div>
+          <h3 class="text-xl font-semibold mb-3">Digital Transformation</h3>
+          <p class="text-zinc-600">Expertise in cyber-physical systems integration and facilities management innovation.</p>
+        </div>
+
+        <!-- Add 3–6 more highlight cards if desired -->
+      </div>
+    </section>
+
+    <footer class="bg-zinc-900 text-white/80 py-12 text-center text-sm border-t border-zinc-800">
+      © March 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
+    </footer>
+
+  </main>
+
+  <!-- JavaScript (same as index.html) -->
+  <script>
+    function toggleDropdown(btn) {
+      const group = btn.parentElement;
+      group.classList.toggle('dropdown-active');
+      document.querySelectorAll('.group').forEach(el => {
+        if (el !== group) el.classList.remove('dropdown-active');
+      });
+    }
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.group')) {
+        document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
+      }
+    });
+  </script>
+
 </body>
 </html>
