@@ -10,7 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    /* Slide animation for left menu */
+    /* Slide animation for mobile left menu */
     #mobile-menu {
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
@@ -20,143 +20,189 @@
     }
   </style>
 </head>
-<body class="bg-zinc-50 min-h-screen flex flex-col">
+<body class="bg-zinc-50 min-h-screen flex flex-col md:flex-row">
 
-  <!-- ==================== TOP NAVIGATION ==================== -->
-  <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <!-- Hamburger – top-left -->
-        <button id="mobile-menu-btn" class="text-zinc-700 hover:text-blue-600 focus:outline-none md:hidden">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-
-        <!-- Desktop menu -->
-        <div class="hidden md:flex items-center gap-8 lg:gap-10 text-base lg:text-lg font-medium mx-auto">
-          <a href="index.html" class="text-blue-600 font-semibold">Home</a>
-
-          <div class="relative group">
-            <button class="flex items-center gap-1.5 hover:text-blue-600 transition">
-              Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
-            </button>
-            <div class="dropdown-content absolute left-0 top-full mt-2 w-56 bg-white shadow-xl rounded-xl py-3 border hidden group-hover:block">
-              <a href="resume-pm.html" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
-              <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
-            </div>
-          </div>
-
-          <div class="relative group">
-            <button class="flex items-center gap-1.5 hover:text-blue-600 transition">
-              Services <i class="fas fa-chevron-down text-xs ml-1"></i>
-            </button>
-            <div class="dropdown-content absolute left-0 top-full mt-2 w-72 bg-white shadow-xl rounded-xl py-3 border hidden group-hover:block">
-              <a href="services-courses.html" class="block px-6 py-2.5 hover:bg-zinc-50">Course Facilitation</a>
-              <a href="services-notary.html" class="block px-6 py-2.5 hover:bg-zinc-50">Notary Public</a>
-              <a href="services-cleaning.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
-              <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
-            </div>
-          </div>
-
-          <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
-        </div>
-
-        <!-- Resume PDF link (desktop only) -->
-        <a href="assets/resume.pdf" target="_blank" class="hidden md:block text-sm text-zinc-500 hover:text-blue-600">
-          ↓ PDF Resume
-        </a>
+  <!-- ==================== FIXED SIDEBAR (desktop/tablet only) ==================== -->
+  <aside class="hidden md:block w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto shadow-xl fixed top-0 left-0 z-50">
+    <div class="p-8 sticky top-0 bg-white">
+      <div class="flex flex-col items-center text-center">
+        <img src="assets/profile.jpg" alt="Francis Obinna Madubuike"
+             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
+        <p class="text-blue-600 font-medium text-lg mt-1">
+          Construction Informatics | Digital Twins | Project Management | Researcher
+        </p>
       </div>
     </div>
-  </nav>
 
-  <!-- ==================== MOBILE LEFT-SIDE SLIDING MENU ==================== -->
-  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/40 z-40 hidden md:hidden backdrop-blur-sm"></div>
-
-  <div id="mobile-menu" class="fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white border-r border-zinc-200 z-50 shadow-2xl overflow-y-auto">
-    <div class="p-5">
-      <!-- Close button inside menu -->
-      <button id="close-mobile-menu" class="absolute top-4 right-4 text-zinc-600 hover:text-zinc-900 text-2xl">
-        <i class="fas fa-times"></i>
-      </button>
-
-      <div class="mt-12 space-y-1">
-        <a href="index.html" class="block px-4 py-3 text-base font-medium text-zinc-800 hover:text-blue-600 hover:bg-zinc-50 rounded-lg">Home</a>
-
-        <!-- Collapsible Resume -->
-        <div>
-          <button onclick="toggleSubmenu('resume-submenu-mobile')"
-                  class="w-full text-left px-4 py-3 text-base font-medium text-zinc-800 hover:text-blue-600 hover:bg-zinc-50 rounded-lg flex items-center justify-between">
-            Resume
-            <i class="fas fa-chevron-down text-sm transition-transform duration-200" id="resume-chevron-mobile"></i>
-          </button>
-          <div id="resume-submenu-mobile" class="hidden pl-6 space-y-1">
-            <a href="resume-pm.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Project Management</a>
-            <a href="resume-academic.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Academic</a>
-          </div>
-        </div>
-
-        <!-- Collapsible Services -->
-        <div>
-          <button onclick="toggleSubmenu('services-submenu-mobile')"
-                  class="w-full text-left px-4 py-3 text-base font-medium text-zinc-800 hover:text-blue-600 hover:bg-zinc-50 rounded-lg flex items-center justify-between">
-            Services
-            <i class="fas fa-chevron-down text-sm transition-transform duration-200" id="services-chevron-mobile"></i>
-          </button>
-          <div id="services-submenu-mobile" class="hidden pl-6 space-y-1">
-            <a href="services-courses.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Course Facilitation</a>
-            <a href="services-notary.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Notary Public</a>
-            <a href="services-cleaning.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Cleaning Services</a>
-            <a href="services-photography.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Photography</a>
-          </div>
-        </div>
-
-        <a href="contact.html" class="block px-4 py-3 text-base font-medium text-zinc-800 hover:text-blue-600 hover:bg-zinc-50 rounded-lg">Contact Me</a>
-
-        <a href="assets/resume.pdf" target="_blank" class="block px-4 py-3 text-base font-medium text-zinc-500 hover:text-blue-600 hover:bg-zinc-50 rounded-lg">
-          ↓ PDF Resume
-        </a>
+    <div class="p-8 space-y-10">
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
+        <p class="text-zinc-700 leading-relaxed text-[15px]">
+          Doctoral candidate and researcher specializing in digital twins for the built environment, intelligent buildings, 
+          and cyber-physical systems integration. My work focuses on improving project delivery, facilities management, 
+          and digital transformation in construction through systematic reviews, case studies, and applied research.
+        </p>
       </div>
+
+      <div>
+        <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">Quick Contact</h3>
+        <div class="flex justify-center gap-8 text-3xl mt-6">
+          <a href="mailto:your.email@domain.com" class="text-zinc-600 hover:text-blue-600 transition">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="text-zinc-600 hover:text-blue-600 transition">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="tel:+234xxxxxxxxxx" class="text-zinc-600 hover:text-blue-600 transition">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MOBILE TOP PROFILE (only visible < md) ==================== -->
+  <div class="md:hidden bg-white border-b">
+    <div class="p-6 text-center">
+      <img src="assets/profile.jpg" alt="Francis Obinna Madubuike"
+           class="w-32 h-32 mx-auto rounded-2xl object-cover shadow-xl mb-4 border-4 border-white">
+      <h2 class="text-2xl font-bold mb-2">Hello, I'm Francis Obinna Madubuike</h2>
+      <p class="text-base text-blue-600 font-medium mb-4">
+        Construction Digitalization • Digital Twins • Intelligent Buildings • Project Management • Researcher
+      </p>
+      <div class="flex justify-center gap-8 text-3xl mb-4">
+        <a href="mailto:your.email@domain.com" class="text-zinc-600 hover:text-blue-600"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="text-zinc-600 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+        <a href="tel:+234xxxxxxxxxx" class="text-zinc-600 hover:text-blue-600"><i class="fas fa-phone"></i></a>
+      </div>
+      <p class="text-zinc-700 text-base leading-relaxed max-w-md mx-auto">
+        Doctoral candidate and researcher specializing in digital twins for the built environment, intelligent buildings, 
+        and cyber-physical systems integration. My work focuses on improving project delivery, facilities management, 
+        and digital transformation in construction through systematic reviews, case studies, and applied research.
+      </p>
     </div>
   </div>
 
   <!-- ==================== MAIN CONTENT ==================== -->
-  <main class="flex-1 md:ml-80">
+  <div class="flex-1 md:ml-80 flex flex-col">
+
+    <!-- ==================== TOP NAVIGATION ==================== -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <button id="mobile-menu-btn" class="text-zinc-700 hover:text-blue-600 focus:outline-none md:hidden">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+
+          <div class="hidden md:flex items-center gap-8 lg:gap-10 text-base lg:text-lg font-medium mx-auto">
+            <a href="index.html" class="text-blue-600 font-semibold">Home</a>
+
+            <div class="relative group">
+              <button class="flex items-center gap-1.5 hover:text-blue-600 transition">
+                Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
+              </button>
+              <div class="dropdown-content absolute left-0 top-full mt-2 w-56 bg-white shadow-xl rounded-xl py-3 border hidden group-hover:block">
+                <a href="resume-pm.html" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
+                <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <button class="flex items-center gap-1.5 hover:text-blue-600 transition">
+                Services <i class="fas fa-chevron-down text-xs ml-1"></i>
+              </button>
+              <div class="dropdown-content absolute left-0 top-full mt-2 w-72 bg-white shadow-xl rounded-xl py-3 border hidden group-hover:block">
+                <a href="services-courses.html" class="block px-6 py-2.5 hover:bg-zinc-50">Course Facilitation</a>
+                <a href="services-notary.html" class="block px-6 py-2.5 hover:bg-zinc-50">Notary Public</a>
+                <a href="services-cleaning.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
+                <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
+              </div>
+            </div>
+
+            <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
+          </div>
+
+          <a href="assets/resume.pdf" target="_blank" class="hidden md:block text-sm text-zinc-500 hover:text-blue-600">
+            ↓ PDF Resume
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==================== MOBILE LEFT-SLIDING MENU ==================== -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/40 z-40 hidden md:hidden backdrop-blur-sm"></div>
+
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white border-r border-zinc-200 z-50 shadow-2xl overflow-y-auto">
+      <div class="p-5">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 text-zinc-600 hover:text-zinc-900 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="mt-12 space-y-1">
+          <a href="index.html" class="block px-4 py-3 text-base font-medium text-zinc-800 hover:text-blue-600 hover:bg-zinc-50 rounded-lg">Home</a>
+
+          <div>
+            <button onclick="toggleSubmenu('resume-submenu-mobile')"
+                    class="w-full text-left px-4 py-3 text-base font-medium text-zinc-800 hover:text-blue-600 hover:bg-zinc-50 rounded-lg flex items-center justify-between">
+              Resume
+              <i class="fas fa-chevron-down text-sm transition-transform duration-200" id="resume-chevron-mobile"></i>
+            </button>
+            <div id="resume-submenu-mobile" class="hidden pl-6 space-y-1">
+              <a href="resume-pm.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Project Management</a>
+              <a href="resume-academic.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Academic</a>
+            </div>
+          </div>
+
+          <div>
+            <button onclick="toggleSubmenu('services-submenu-mobile')"
+                    class="w-full text-left px-4 py-3 text-base font-medium text-zinc-800 hover:text-blue-600 hover:bg-zinc-50 rounded-lg flex items-center justify-between">
+              Services
+              <i class="fas fa-chevron-down text-sm transition-transform duration-200" id="services-chevron-mobile"></i>
+            </button>
+            <div id="services-submenu-mobile" class="hidden pl-6 space-y-1">
+              <a href="services-courses.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Course Facilitation</a>
+              <a href="services-notary.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Notary Public</a>
+              <a href="services-cleaning.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Cleaning Services</a>
+              <a href="services-photography.html" class="block py-2.5 text-sm text-zinc-700 hover:text-blue-600">Photography</a>
+            </div>
+          </div>
+
+          <a href="contact.html" class="block px-4 py-3 text-base font-medium text-zinc-800 hover:text-blue-600 hover:bg-zinc-50 rounded-lg">Contact Me</a>
+
+          <a href="assets/resume.pdf" target="_blank" class="block px-4 py-3 text-base font-medium text-zinc-500 hover:text-blue-600 hover:bg-zinc-50 rounded-lg">
+            ↓ PDF Resume
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== HERO / INTRODUCTION ==================== -->
     <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 py-8 md:py-16 lg:py-20">
-      <!-- Mobile: single blue card with exact order -->
+      <!-- Mobile card -->
       <div class="md:hidden bg-[#1e40af] text-white rounded-2xl shadow-2xl overflow-hidden border border-blue-400/30">
         <div class="p-6 sm:p-8 text-center">
-          <!-- 1. Profile image -->
           <img src="assets/profile.jpg" alt="Francis Obinna Madubuike"
                class="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-2xl object-cover shadow-xl mb-5 border-4 border-white/80">
 
-          <!-- 2. Greeting -->
           <h2 class="text-2xl sm:text-3xl font-bold mb-2">Hello, I'm Francis Obinna Madubuike</h2>
 
-          <!-- 3. Tagline -->
           <p class="text-base sm:text-lg font-light mb-5 opacity-90 px-2">
             Construction Digitalization • Digital Twins • Intelligent Buildings • Project Management • Researcher
           </p>
 
-          <!-- 4. Social icons -->
           <div class="flex justify-center gap-8 text-3xl mb-6">
-            <a href="mailto:your.email@domain.com" class="text-white/90 hover:text-white transition">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="text-white/90 hover:text-white transition">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="tel:+234xxxxxxxxxx" class="text-white/90 hover:text-white transition">
-              <i class="fas fa-phone"></i>
-            </a>
+            <a href="mailto:your.email@domain.com" class="text-white/90 hover:text-white transition"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="text-white/90 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+            <a href="tel:+234xxxxxxxxxx" class="text-white/90 hover:text-white transition"><i class="fas fa-phone"></i></a>
           </div>
 
-          <!-- 5. Professional summary -->
           <p class="text-white/90 text-base sm:text-lg leading-relaxed mb-8 max-w-md mx-auto">
             Doctoral candidate and researcher specializing in digital twins for the built environment, intelligent buildings, 
             and cyber-physical systems integration. My work focuses on improving project delivery, facilities management, 
             and digital transformation in construction through systematic reviews, case studies, and applied research.
           </p>
 
-          <!-- 6. CTAs -->
           <div class="flex flex-col gap-5">
             <button onclick="document.getElementById('resumeModal').classList.remove('hidden')"
                     class="bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition shadow-md">
@@ -171,7 +217,7 @@
       </div>
 
       <!-- Desktop hero -->
-      <div class="hidden md:block bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-3xl overflow-hidden shadow-2xl mt-8 md:mt-0">
+      <div class="hidden md:block bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-3xl overflow-hidden shadow-2xl">
         <div class="px-8 sm:px-12 lg:px-16 py-20 lg:py-32 text-center">
           <h1 class="text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
             Hello, I'm Francis Obinna Madubuike
@@ -204,7 +250,7 @@
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-        <!-- Example publication card – repeat for all 8 with your real content -->
+        <!-- Example card – repeat for your 8 publications -->
         <div class="bg-zinc-50 rounded-xl shadow hover:shadow-2xl transition overflow-hidden border border-zinc-200">
           <img src="assets/pub1.jpg" alt="" class="w-full h-44 sm:h-48 object-cover">
           <div class="p-5 sm:p-6">
@@ -215,8 +261,7 @@
             </a>
           </div>
         </div>
-
-        <!-- ... add your other 7 publication cards here ... -->
+        <!-- ... add your other 7 cards here ... -->
       </div>
 
       <div class="text-center mt-12 md:mt-16">
@@ -240,7 +285,7 @@
 
   <!-- ==================== SCRIPTS ==================== -->
   <script>
-    // Mobile menu (left slide-in)
+    // Mobile menu toggle
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const backdrop = document.getElementById('mobile-menu-backdrop');
@@ -265,7 +310,7 @@
       document.getElementById('close-mobile-menu')?.addEventListener('click', closeMobileMenu);
     }
 
-    // Submenu toggles (Resume & Services in mobile menu)
+    // Submenu toggles
     function toggleSubmenu(id) {
       const submenu = document.getElementById(id);
       const chevron = document.getElementById(id.replace('submenu', 'chevron'));
@@ -274,7 +319,7 @@
     }
   </script>
 
-  <!-- ==================== MODALS ==================== -->
+  <!-- Modals (unchanged) -->
   <div id="resumeModal" class="hidden fixed inset-0 bg-black/65 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white rounded-2xl p-6 sm:p-10 max-w-md w-full relative shadow-2xl">
       <button onclick="document.getElementById('resumeModal').classList.add('hidden')" 
