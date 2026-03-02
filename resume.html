@@ -15,11 +15,20 @@
     .dropdown-active .dropdown-content { display: block; }
   </style>
 </head>
-<body class="bg-zinc-50 flex min-h-screen">
+<body class="bg-zinc-50 min-h-screen">
 
-  <!-- FIXED SIDEBAR (identical to index.html) -->
-  <aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
-    <div class="p-8 sticky top-0 bg-white border-b">
+  <!-- Hamburger button – visible only on mobile -->
+  <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg focus:outline-none">
+    <i class="fas fa-bars text-2xl text-zinc-800"></i>
+  </button>
+
+  <!-- Sidebar – hidden on mobile by default -->
+  <aside id="sidebar" class="
+    fixed inset-y-0 left-0 z-40 w-80 bg-white border-r border-zinc-200 overflow-y-auto shadow-2xl
+    transform -translate-x-full transition-transform duration-300 ease-in-out
+    md:translate-x-0 md:relative md:inset-auto md:shadow-none md:border-r md:h-auto
+  ">
+    <div class="p-8 sticky top-0 bg-white border-b md:border-b-0">
       <div class="flex flex-col items-center text-center">
         <img src="assets/profile.jpg" alt="Francis Obinna Madubuike" 
              class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
@@ -32,9 +41,8 @@
         <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-3 font-medium">About Me</h3>
         <p class="text-zinc-700 leading-relaxed text-[15px]">
           Doctoral candidate and researcher specializing in digital twins for the built environment, intelligent buildings, 
-          and cyber-physical systems integration. My work focuses on improving project delivery, facilities management, 
-          and digital transformation in construction through systematic reviews, case studies, and applied research. 
-          I also provide professional services in training facilitation, notary public, cleaning, and photography.
+          and cyber-physical systems integration. Experienced in project delivery, research leadership, 
+          training facilitation, notary services, professional cleaning, and photography.
         </p>
       </div>
       <div>
@@ -55,13 +63,19 @@
     </div>
   </aside>
 
-  <!-- MAIN CONTENT -->
-  <main class="flex-1 ml-80">
+  <!-- Overlay to close menu on mobile -->
+  <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"></div>
 
-    <!-- TOP NAVIGATION (same as index.html) -->
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="flex-1 transition-all duration-300 md:ml-80">
+
+    <!-- TOP NAVIGATION -->
     <nav class="bg-white border-b sticky top-0 z-40 shadow-sm">
-      <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-        <div class="flex items-center gap-10 text-lg font-medium">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-xl sm:text-2xl font-bold text-blue-600">Francis Obinna</a>
+
+        <!-- Desktop nav links -->
+        <div class="hidden md:flex items-center gap-8 lg:gap-10 text-base lg:text-lg font-medium">
           <a href="index.html" class="hover:text-blue-600 transition">Home</a>
 
           <div class="relative group">
@@ -88,30 +102,35 @@
 
           <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
         </div>
-        <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">↓ PDF Resume</a>
+
+        <!-- PDF link (always visible) -->
+        <a href="assets/resume.pdf" target="_blank" class="text-sm sm:text-base text-zinc-500 hover:text-blue-600 hidden sm:block">
+          ↓ PDF Resume
+        </a>
       </div>
     </nav>
 
     <!-- RESUME HEADER / OVERVIEW -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-20 md:py-28 border-b border-zinc-200">
-      <div class="max-w-5xl mx-auto px-8 text-center">
-        <h1 class="text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Professional Resume</h1>
-        <p class="text-xl md:text-2xl text-zinc-700 max-w-3xl mx-auto mb-10">
-          Comprehensive overview of experience, skills, education, and achievements in construction informatics, digital twins, project management, and research.
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 sm:py-20 md:py-28 border-b border-zinc-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 mb-4">Professional Resume</h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-zinc-700 max-w-3xl mx-auto mb-8 sm:mb-10">
+          Comprehensive overview of experience, skills, education, and achievements in construction informatics, 
+          digital twins, project management, and research.
         </p>
 
-        <div class="flex flex-wrap justify-center gap-6">
+        <div class="flex flex-wrap justify-center gap-5 sm:gap-6">
           <a href="assets/resume.pdf" target="_blank"
-             class="inline-flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
+             class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg hover:bg-blue-700 transition shadow-lg">
             <i class="fas fa-file-pdf"></i> Download Full PDF
           </a>
           <a href="assets/resume.docx" target="_blank"
-             class="inline-flex items-center gap-3 bg-zinc-800 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-zinc-900 transition shadow-lg">
+             class="inline-flex items-center gap-3 bg-zinc-800 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg hover:bg-zinc-900 transition shadow-lg">
             <i class="fas fa-file-word"></i> Download DOCX
           </a>
         </div>
 
-        <div class="mt-10 text-sm text-zinc-500">
+        <div class="mt-6 sm:mt-8 text-sm sm:text-base text-zinc-500">
           Prefer a focused view? Choose from the dropdown above:
           <span class="font-medium text-blue-600">Project Management</span> or 
           <span class="font-medium text-blue-600">Academic</span> version.
@@ -119,42 +138,70 @@
       </div>
     </section>
 
-    <!-- OPTIONAL: BRIEF HIGHLIGHTS / KEY POINTS -->
-    <section class="max-w-5xl mx-auto px-8 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Key Highlights</h2>
+    <!-- KEY HIGHLIGHTS -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Key Highlights</h2>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Example highlight cards – customize or add more -->
-        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-          <div class="text-4xl mb-4">🎓</div>
-          <h3 class="text-xl font-semibold mb-3">Research & Publications</h3>
-          <p class="text-zinc-600">Multiple peer-reviewed papers on digital twins in construction and intelligent buildings.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Highlight card example -->
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <div class="text-5xl sm:text-6xl mb-4">🎓</div>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3">Research & Publications</h3>
+          <p class="text-zinc-600 text-sm sm:text-base">
+            Multiple peer-reviewed papers on digital twins in construction and intelligent buildings.
+          </p>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-          <div class="text-4xl mb-4">📊</div>
-          <h3 class="text-xl font-semibold mb-3">Project Management</h3>
-          <p class="text-zinc-600">Experience delivering complex construction and research projects on time and within budget.</p>
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <div class="text-5xl sm:text-6xl mb-4">📊</div>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3">Project Management</h3>
+          <p class="text-zinc-600 text-sm sm:text-base">
+            Experience delivering complex construction and research projects on time and within budget.
+          </p>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-          <div class="text-4xl mb-4">🛠️</div>
-          <h3 class="text-xl font-semibold mb-3">Digital Transformation</h3>
-          <p class="text-zinc-600">Expertise in cyber-physical systems integration and facilities management innovation.</p>
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
+          <div class="text-5xl sm:text-6xl mb-4">🛠️</div>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3">Digital Transformation</h3>
+          <p class="text-zinc-600 text-sm sm:text-base">
+            Expertise in cyber-physical systems integration and facilities management innovation.
+          </p>
         </div>
 
-        <!-- Add 3–6 more highlight cards if desired -->
+        <!-- Add more cards if needed -->
       </div>
     </section>
 
-    <footer class="bg-zinc-900 text-white/80 py-12 text-center text-sm border-t border-zinc-800">
-      © March 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
+    <footer class="bg-zinc-900 text-white/80 py-8 sm:py-10 text-center text-sm border-t border-zinc-800">
+      © 2026 Francis Obinna Madubuike • Hosted on GitHub Pages
     </footer>
 
   </main>
 
-  <!-- JavaScript (same as index.html) -->
+  <!-- JavaScript -->
   <script>
+    // Menu toggle (mobile)
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    if (overlay) overlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking links on mobile
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) toggleMenu();
+      });
+    });
+
+    // Dropdown toggle (desktop)
     function toggleDropdown(btn) {
       const group = btn.parentElement;
       group.classList.toggle('dropdown-active');
