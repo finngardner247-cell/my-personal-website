@@ -62,19 +62,20 @@
           <i class="fas fa-phone w-5 text-zinc-500"></i> 
           +234 xxx xxx xxxx
         </a>
-        <!-- New: Copyable Portfolio Link -->
+        <!-- Copyable Portfolio Link with icon beside text -->
         <div class="relative group mt-4">
-          <button 
+          <button
             onclick="copyToClipboard('https://finngardner247-cell.github.io/my-personal-website/')"
             class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition w-full text-left"
           >
-            <i class="fas fa-link w-5 text-zinc-500"></i> 
-            Portfolio Link
-            <span class="ml-auto text-xs text-zinc-400">(click to copy)</span>
+            <i class="fas fa-link w-5 text-zinc-500"></i>
+            <span>Portfolio Link</span>
+            <i class="fas fa-copy text-sm text-zinc-400 ml-auto group-hover:text-blue-500 transition"></i>
+            <span class="ml-1 text-xs text-zinc-400 opacity-70">(click to copy)</span>
           </button>
 
           <!-- Tooltip feedback -->
-          <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-3 py-1 pointer-events-none">
+          <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-3 py-1 pointer-events-none z-10">
             Copied!
           </span>
         </div>
@@ -222,7 +223,14 @@
 
   </main>
 
+<!-- JavaScript (updated with copyToClipboard function) -->
   <script>
+    function showModal(id) {
+      document.getElementById(id).classList.add('show');
+    }
+    function hideModal(id) {
+      document.getElementById(id).classList.remove('show');
+    }
     function toggleDropdown(btn) {
       const group = btn.parentElement;
       group.classList.toggle('dropdown-active');
@@ -230,12 +238,21 @@
         if (el !== group) el.classList.remove('dropdown-active');
       });
     }
-
     document.addEventListener('click', e => {
       if (!e.target.closest('.group')) {
         document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
       }
     });
+
+    // Added function for copying portfolio link
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Success - tooltip is already handled via CSS
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert('Could not copy link – please copy manually');
+      });
+    }
   </script>
 
 </body>
