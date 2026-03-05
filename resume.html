@@ -17,69 +17,79 @@
 </head>
 <body class="bg-zinc-50 flex min-h-screen">
 
-<!-- FIXED SIDEBAR -->
+<!-- FIXED SIDEBAR – compact version -->
 <aside class="w-80 bg-white border-r border-zinc-200 h-screen overflow-y-auto sidebar shadow-xl fixed z-50">
+  <!-- Top profile section – reduced padding -->
   <div class="p-8 sticky top-0 bg-white border-b">
     <div class="flex flex-col items-center text-center">
-      <img 
-        src="assets/profile.jfif" 
-        alt="Francis Obinna Madubuike" 
+      <img
+        src="assets/profile.jfif"
+        alt="Francis Obinna Madubuike"
         class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white"
       >
-      <h1 class="text-3xl font-bold text-zinc-900">Francis Obinna Madubuike</h1>
-      <p class="text-blue-600 font-medium text-lg mt-1">
+      <h1 class="text-3xl font-bold text-blue-900">Francis Obinna Madubuike</h1>
+      <p class="text-black font-medium text-base mt-1 leading-snug">
         Construction Informatics | Digital Twins | Project Management | Researcher
       </p>
     </div>
   </div>
 
-  <!-- Reduced padding & spacing here -->
-  <div class="p-6 pt-6 pb-8 space-y-6">
-    <div>
-      <h3 class="uppercase text-xs tracking-widest text-zinc-500 mb-2 font-medium">
-        Quick Contact
-      </h3>
-      <div class="space-y-3 text-base mt-2">
-        <a 
-          href="mailto:your.email@domain.com" 
-          class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition"
-        >
-          <i class="fas fa-envelope w-5 text-zinc-500"></i> 
-          your.email@domain.com
-        </a>
-        <a 
-          href="https://www.linkedin.com/in/your-linkedin-username/" 
-          target="_blank" 
-          class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition"
-        >
-          <i class="fab fa-linkedin w-5 text-zinc-500"></i> 
-          LinkedIn
-        </a>
-        <a 
-          href="tel:+234xxxxxxxxxx" 
-          class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition"
-        >
-          <i class="fas fa-phone w-5 text-zinc-500"></i> 
-          +234 xxx xxx xxxx
-        </a>
-        <!-- New: Copyable Portfolio Link -->
-        <div class="relative group mt-4">
-          <button 
-            onclick="copyToClipboard('https://finngardner247-cell.github.io/my-personal-website/')"
-            class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition w-full text-left"
-          >
-            <i class="fas fa-link w-5 text-zinc-500"></i> 
-            Portfolio Link
-            <span class="ml-auto text-xs text-zinc-400">(click to copy)</span>
-          </button>
+<!-- Main content – very compact now -->
+<div class="p-5 pt-4 space-y-5 text-sm">
+  <div>
+    <h3 class="uppercase text-xs tracking-wider text-zinc-500 mb-2 font-semibold">
+      Quick Contact
+    </h3>
+    <div class="space-y-2.5">
+      <a
+        href="mailto:your.email@domain.com"
+        class="flex items-center gap-2.5 text-blue-600"
+      >
+        <i class="fas fa-envelope w-4.5 text-zinc-500"></i>
+        your.email@domain.com
+      </a>
+      <a
+        href="https://www.linkedin.com/in/your-linkedin-username/"
+        target="_blank"
+        class="flex items-center gap-2.5 text-blue-600"
+      >
+        <i class="fab fa-linkedin w-4.5 text-zinc-500"></i>
+        LinkedIn
+      </a>
+      <a
+        href="tel:+234xxxxxxxxxx"
+        class="flex items-center gap-2.5 text-blue-600"
+      >
+        <i class="fas fa-phone w-4.5 text-zinc-500"></i>
+        +234 xxx xxx xxxx
+      </a>
 
-          <!-- Tooltip feedback -->
-          <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-3 py-1 pointer-events-none">
-            Copied!
+        <!-- Copyable Portfolio Link – no "(click to copy)" text -->
+        <div class="relative group mt-1">
+          <button
+            onclick="copyToClipboard('https://finngardner247-cell.github.io/my-personal-website/')"
+            class="flex items-center gap-1 text-zinc-800 hover:text-blue-600 transition w-full text-left"
+          >
+            <i class="fas fa-link w-4.5 text-zinc-500"></i>
+            <span>Portfolio Link</span>
+            <i class="fas fa-copy text-xs text-zinc-400 group-hover:text-blue-500 transition"></i>
+          </button>
+          <!-- Small copied tooltip -->
+          <span class="absolute left-0 bottom-full mb-1.5 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1 pointer-events-none z-10 whitespace-nowrap">
+            Copy Link
           </span>
         </div>
       </div>
     </div>
+
+    <!-- If you have more sections (education, skills, etc.), add them here with similar compact spacing -->
+    <!-- Example placeholder: -->
+    <!--
+    <div>
+      <h3 class="uppercase text-xs tracking-wider text-zinc-500 mb-2 font-semibold">Location</h3>
+      <p class="text-zinc-800">Lagos, Nigeria</p>
+    </div>
+    -->
   </div>
 </aside>
   <!-- MAIN CONTENT -->
@@ -180,8 +190,14 @@
 
   </main>
 
-  <!-- JavaScript (same as index.html) -->
+ <!-- JavaScript (updated with copyToClipboard function) -->
   <script>
+    function showModal(id) {
+      document.getElementById(id).classList.add('show');
+    }
+    function hideModal(id) {
+      document.getElementById(id).classList.remove('show');
+    }
     function toggleDropdown(btn) {
       const group = btn.parentElement;
       group.classList.toggle('dropdown-active');
@@ -189,12 +205,21 @@
         if (el !== group) el.classList.remove('dropdown-active');
       });
     }
-
     document.addEventListener('click', e => {
       if (!e.target.closest('.group')) {
         document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
       }
     });
+
+    // Added function for copying portfolio link
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Success - tooltip is already handled via CSS
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert('Could not copy link – please copy manually');
+      });
+    }
   </script>
 
 </body>
