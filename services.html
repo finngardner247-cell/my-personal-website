@@ -58,25 +58,33 @@
           <a href="tel:+234xxxxxxxxxx" class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition">
             <i class="fas fa-phone w-5 text-zinc-500"></i> +234 xxx xxx xxxx
           </a>
-          <!-- New: Copyable Portfolio Link -->
-        <div class="relative group mt-4">
-          <button 
+          <!-- Copyable Portfolio Link – no "(click to copy)" text -->
+        <div class="relative group mt-1">
+          <button
             onclick="copyToClipboard('https://finngardner247-cell.github.io/my-personal-website/')"
-            class="flex items-center gap-3 text-zinc-700 hover:text-blue-600 transition w-full text-left"
+            class="flex items-center gap-1 text-zinc-800 hover:text-blue-600 transition w-full text-left"
           >
-            <i class="fas fa-link w-5 text-zinc-500"></i> 
-            Portfolio Link
-            <span class="ml-auto text-xs text-zinc-400">(click to copy)</span>
+            <i class="fas fa-link w-4.5 text-zinc-500"></i>
+            <span>Portfolio Link</span>
+            <i class="fas fa-copy text-xs text-zinc-400 group-hover:text-blue-500 transition"></i>
           </button>
-
-          <!-- Tooltip feedback -->
-          <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-3 py-1 pointer-events-none">
-            Copied!
+          <!-- Small copied tooltip -->
+          <span class="absolute left-0 bottom-full mb-1.5 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1 pointer-events-none z-10 whitespace-nowrap">
+            Copy Link
           </span>
-        </div>
         </div>
       </div>
     </div>
+
+    <!-- If you have more sections (education, skills, etc.), add them here with similar compact spacing -->
+    <!-- Example placeholder: -->
+    <!--
+    <div>
+      <h3 class="uppercase text-xs tracking-wider text-zinc-500 mb-2 font-semibold">Location</h3>
+      <p class="text-zinc-800">Lagos, Nigeria</p>
+    </div>
+    -->
+  </div>
   </aside>
 
   <!-- Overlay to close menu on mobile -->
