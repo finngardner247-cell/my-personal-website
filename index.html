@@ -193,7 +193,7 @@
 
   </main>
 
-  <!-- JavaScript -->
+  <!-- JavaScript (updated with copyToClipboard function) -->
   <script>
     function showModal(id) {
       document.getElementById(id).classList.add('show');
@@ -213,6 +213,16 @@
         document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
       }
     });
+
+    // Added function for copying portfolio link
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Success - tooltip is already handled via CSS
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert('Could not copy link – please copy manually');
+      });
+    }
   </script>
 
 </body>
