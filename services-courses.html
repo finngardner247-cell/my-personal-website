@@ -334,8 +334,7 @@ function openCertModal(certId) {
 
   // Map to full image paths (update these!)
   const certMap = {
-    'cert1': 'assets/certificates/cert-facilitator-full.jpg',
-    'cert2': 'assets/certificates/cert-trainer-advanced-full.jpg'
+    'cert1': 'assets/certificates.jfif',
     // add more if needed
   };
 
@@ -346,8 +345,8 @@ function openCertModal(certId) {
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
 
-  // Auto-close after 30 seconds
-  let secondsLeft = 30;
+  // Auto-close after 10 seconds
+  let secondsLeft = 10;
   countdownEl.textContent = secondsLeft;
 
   certCloseTimer = setInterval(() => {
