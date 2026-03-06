@@ -256,13 +256,24 @@
       </div>
     </section>
 
-          <!-- NEW: Certificate Viewer Modal -->
-    <div id="certModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden" onclick="closeCertModal(event)">
-      <div class="relative max-w-4xl max-h-[90vh] mx-4">
-        <button 
-          class="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition"
-          onclick="closeCertModal()"
-        >&times;</button>
+          <!-- Certificate Viewer Modal – no close button, auto-close after 30s, try to detect suspicious activity -->
+<div id="certModal" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
+  <div class="relative max-w-4xl max-h-[90vh] mx-4 pointer-events-none">
+    <!-- Full certificate image – no interaction allowed -->
+    <img 
+      id="fullCertImage" 
+      src="" 
+      alt="Full Certificate View (auto-closes in 30 seconds)" 
+      class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain bg-white p-4 select-none"
+      draggable="false"
+    >
+    
+    <!-- Small countdown text -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/60 px-4 py-2 rounded-full opacity-80 pointer-events-none">
+      Closes automatically in <span id="countdown">30</span> seconds
+    </div>
+  </div>
+</div>
         
         <!-- Full certificate image -->
         <img 
@@ -313,33 +324,98 @@
       });
     }
 
-    function openCertModal(certId) {
-      const modal = document.getElementById('certModal');
-      const img = document.getElementById('fullCertImage');
+    // Certificate modal controls
+let certCloseTimer = null;
+
+function openCertModal(certId) {
+  const modal = document.getElementById('certModal');
+  const img = document.getElementById('fullCertImage');
+  const countdownEl = document.getElementById('countdown');
+
+  // Map to full image paths (update these!)
+  const certMap = {
+    'cert1': 'assets/certificates/cert-facilitator-full.jpg',
+    'cert2': 'assets/certificates/cert-trainer-advanced-full.jpg'
+    // add more if needed
+  };
+
+  const src = certMap[certId];
+  if (!src) return;
+
+  img.src = src;
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+
+  // Auto-close after 30 seconds
+  let secondsLeft = 30;
+  countdownEl.textContent = secondsLeft;
+
+  certCloseTimer = setInterval(() => {
+    secondsLeft--;
+    countdownEl.textContent = secondsLeft;
+    if (secondsLeft <= 0) {
+      closeCertModal();
+    }
+  }, 1000);
+
+  // Security: close on visibility change (tab switch, minimize, etc.)
+  document.addEventListener('visibilitychange', handleVisibilityChange, { once: true });
+
+  // Attempt to detect screen recording / sharing start
+  detectScreenCaptureAttempts();
+}
+
+function closeCertModal() {
+  const modal = document.getElementById('certModal');
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+
+  // Clean up
+  if (certCloseTimer) {
+    clearInterval(certCloseTimer);
+    certCloseTimer = null;
+  }
+  document.removeEventListener('visibilitychange', handleVisibilityChange);
+}
+
+function handleVisibilityChange() {
+  if (document.hidden) {
+    closeCertModal();
+  }
+}
+
+// Heuristic detection for getDisplayMedia calls (screen share / record)
+function detectScreenCaptureAttempts() {
+  const originalGetDisplayMedia = navigator.mediaDevices.getDisplayMedia;
+
+  if (originalGetDisplayMedia) {
+    navigator.mediaDevices.getDisplayMedia = async function(...args) {
+      // Screen share/recording attempt detected → close modal immediately
+      closeCertModal();
+      // Optionally show alert (but many recorders suppress alerts)
+      // alert("Screen capture detected. Certificate view terminated.");
       
-      // Map thumbnail to full image path (update paths as needed)
-      const certMap = {
-        'cert1': 'assets/certificate.jfif',
-        // add more if you have additional certificates
-      };
+      // Restore original (optional – depending on your needs)
+      navigator.mediaDevices.getDisplayMedia = originalGetDisplayMedia;
+      
+      // Still allow the original call (don't fully block, just react)
+      return originalGetDisplayMedia.apply(navigator.mediaDevices, args);
+    };
+  }
 
-      img.src = certMap[certId] || '';
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden'; // prevent background scroll
-    }
+  // Additional heuristic: blur event (often happens during recording on some OS/browsers)
+  window.addEventListener('blur', () => {
+    // You can make this stricter by checking time since modal opened
+    closeCertModal();
+  }, { once: true });
+}
 
-    function closeCertModal(e) {
-      const modal = document.getElementById('certModal');
-      if (!e || e.target === modal || e.target.tagName === 'BUTTON') {
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-      }
-    }
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeCertModal();
-    });
+// Optional: close with Escape key (you can remove if unwanted)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !document.getElementById('certModal').classList.contains('hidden')) {
+    closeCertModal();
+  }
+});
   </script>
 
 </body>
