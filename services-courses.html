@@ -332,21 +332,16 @@ function openCertModal(certId) {
   const img = document.getElementById('fullCertImage');
   const countdownEl = document.getElementById('countdown');
 
-  // Map to full image paths (update these!)
-  const certMap = {
-    'cert1': 'assets/certificates.jfif',
-    // add more if needed
-  };
-
-  const src = certMap[certId];
-  if (!src) return;
+  // Using your actual certificate file
+  // (we ignore certId for now since there's only one certificate)
+  const src = 'assets/certificate.jfif';
 
   img.src = src;
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
 
-  // Auto-close after 10 seconds
-  let secondsLeft = 10;
+  // Auto-close after 5 seconds
+  let secondsLeft = 5;
   countdownEl.textContent = secondsLeft;
 
   certCloseTimer = setInterval(() => {
@@ -357,10 +352,10 @@ function openCertModal(certId) {
     }
   }, 1000);
 
-  // Security: close on visibility change (tab switch, minimize, etc.)
+  // Close if tab is hidden / switched
   document.addEventListener('visibilitychange', handleVisibilityChange, { once: true });
 
-  // Attempt to detect screen recording / sharing start
+  // Attempt to detect screen capture attempts
   detectScreenCaptureAttempts();
 }
 
@@ -369,7 +364,6 @@ function closeCertModal() {
   modal.classList.add('hidden');
   document.body.style.overflow = '';
 
-  // Clean up
   if (certCloseTimer) {
     clearInterval(certCloseTimer);
     certCloseTimer = null;
@@ -383,33 +377,24 @@ function handleVisibilityChange() {
   }
 }
 
-// Heuristic detection for getDisplayMedia calls (screen share / record)
+// Basic heuristic for screen recording/sharing detection
 function detectScreenCaptureAttempts() {
-  const originalGetDisplayMedia = navigator.mediaDevices.getDisplayMedia;
+  const originalGetDisplayMedia = navigator.mediaDevices?.getDisplayMedia;
 
   if (originalGetDisplayMedia) {
     navigator.mediaDevices.getDisplayMedia = async function(...args) {
-      // Screen share/recording attempt detected → close modal immediately
       closeCertModal();
-      // Optionally show alert (but many recorders suppress alerts)
-      // alert("Screen capture detected. Certificate view terminated.");
-      
-      // Restore original (optional – depending on your needs)
+      // Restore original function
       navigator.mediaDevices.getDisplayMedia = originalGetDisplayMedia;
-      
-      // Still allow the original call (don't fully block, just react)
       return originalGetDisplayMedia.apply(navigator.mediaDevices, args);
     };
   }
 
-  // Additional heuristic: blur event (often happens during recording on some OS/browsers)
-  window.addEventListener('blur', () => {
-    // You can make this stricter by checking time since modal opened
-    closeCertModal();
-  }, { once: true });
+  // Close on window blur (somewhat aggressive but helps catch some cases)
+  window.addEventListener('blur', closeCertModal, { once: true });
 }
 
-// Optional: close with Escape key (you can remove if unwanted)
+// Optional: still allow Escape key to close (remove if you don't want it)
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && !document.getElementById('certModal').classList.contains('hidden')) {
     closeCertModal();
