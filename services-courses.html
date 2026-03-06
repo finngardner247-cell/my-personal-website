@@ -257,7 +257,7 @@
       </div>
     </section>
 
-      <!-- CERTIFICATE MODAL – simple 2-second auto-close -->
+      <!-- CERTIFICATE MODAL – simple 1-second auto-close -->
       <div id="certModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
         <div class="relative max-w-4xl max-h-[90vh] mx-4">
           <img 
@@ -267,7 +267,7 @@
             class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain bg-white p-4"
           >
           <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/60 px-5 py-2 rounded-full">
-            Closes in <span id="countdown">2</span> seconds
+            Closes in <span id="countdown">1</span> seconds
           </div>
         </div>
       </div>
@@ -323,8 +323,8 @@ function openCertModal() {
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
 
-  // Auto-close after 2 seconds
-  let secondsLeft = 2;
+  // Auto-close after 1 second
+  let secondsLeft = ;
   countdownEl.textContent = secondsLeft;
 
   certCloseTimer = setInterval(() => {
