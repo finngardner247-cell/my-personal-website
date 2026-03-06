@@ -203,23 +203,23 @@
           </div>
         </div>
 
-        <!-- CERTIFICATE CONTAINER -->
-      <div class="bg-white rounded-xl shadow-sm border border-zinc-200 p-6 mb-12 max-w-3xl mx-auto text-center">
-        <h3 class="text-xl font-semibold text-zinc-800 mb-4">Certified Course Facilitator</h3>
-        <p class="text-sm text-zinc-600 mb-5">
-          Professional certification – click to view (secure 5-second preview)
-        </p>
-        <div class="flex justify-center">
-          <div class="cursor-pointer transition hover:scale-105" onclick="openCertModal()">
-            <img 
-              src="assets/certificate.jfif" 
-              alt="Certified Course Facilitator Certificate" 
-              class="w-48 h-auto rounded-lg shadow border border-zinc-300 object-cover"
-              loading="lazy"
-            >
-          </div>
+    <!-- CERTIFICATE CONTAINER – simple version -->
+    <div class="bg-white rounded-xl shadow-sm border border-zinc-200 p-6 mb-12 max-w-3xl mx-auto text-center">
+      <h3 class="text-xl font-semibold text-zinc-800 mb-4">Certified Course Facilitator</h3>
+      <p class="text-sm text-zinc-600 mb-5">
+        Click image to briefly view certification
+      </p>
+      <div class="flex justify-center">
+        <div class="cursor-pointer transition hover:scale-105" onclick="openCertModal()">
+          <img 
+            src="assets/certificate.jfif" 
+            alt="Certified Course Facilitator Certificate" 
+            class="w-48 h-auto rounded-lg shadow border border-zinc-300 object-cover"
+            loading="lazy"
+          >
         </div>
       </div>
+    </div>
 
         <!-- Who it's for + Benefits -->
         <div class="bg-zinc-100 rounded-2xl p-10 md:p-12 mb-16">
@@ -257,44 +257,20 @@
       </div>
     </section>
 
-          <!-- CERTIFICATE MODAL -->
-  <div id="certModal" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden select-none">
-    <div class="relative max-w-4xl max-h-[90vh] mx-4 pointer-events-none">
-      <img 
-        id="fullCertImage" 
-        src="" 
-        alt="Certified Course Facilitator Certificate – Protected View"
-        class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain bg-white p-6 pointer-events-none select-none"
-        draggable="false"
-      >
-      <!-- Protective overlay -->
-      <div class="absolute inset-0 pointer-events-auto" 
-           oncontextmenu="return false;"
-           ondragstart="return false;"
-           onselectstart="return false;">
-      </div>
-      <!-- Large watermark -->
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-25">
-        <div class="text-white text-6xl md:text-9xl font-black rotate-[-30deg] tracking-widest select-none pointer-events-none">
-          CONFIDENTIAL – VIEW ONLY
+      <!-- CERTIFICATE MODAL – simple 2-second auto-close -->
+      <div id="certModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
+        <div class="relative max-w-4xl max-h-[90vh] mx-4">
+          <img 
+            id="fullCertImage" 
+            src="" 
+            alt="Certified Course Facilitator Certificate"
+            class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain bg-white p-4"
+          >
+          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/60 px-5 py-2 rounded-full">
+            Closes in <span id="countdown">2</span> seconds
+          </div>
         </div>
       </div>
-      <!-- Timer & notice -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-sm bg-black/70 px-6 py-3 rounded-full opacity-90 pointer-events-none select-none">
-        View closes in <span id="countdown">2</span> seconds • Unauthorized capture prohibited
-      </div>
-    </div>
-  </div>
-        
-        <!-- Full certificate image -->
-        <img 
-          id="fullCertImage" 
-          src="" 
-          alt="Full Certificate View" 
-          class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain bg-white p-2"
-        >
-      </div>
-    </div>
 
           
 
@@ -335,78 +311,41 @@
       });
     }
 
-    // Certificate modal logic
-  let certCloseTimer = null;
+    // Certificate modal – very simple version
+let certCloseTimer = null;
 
-  function openCertModal() {
-    const modal = document.getElementById('certModal');
-    const img = document.getElementById('fullCertImage');
-    const countdownEl = document.getElementById('countdown');
+function openCertModal() {
+  const modal = document.getElementById('certModal');
+  const img = document.getElementById('fullCertImage');
+  const countdownEl = document.getElementById('countdown');
 
-    img.src = 'assets/certificate.jfif';
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
+  img.src = 'assets/certificate.jfif';
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
 
-    // Extra image protections
-    img.oncontextmenu = () => false;
-    img.ondragstart   = () => false;
-    img.onselectstart = () => false;
+  // Auto-close after 2 seconds
+  let secondsLeft = 2;
+  countdownEl.textContent = secondsLeft;
 
-    // 2-second countdown
-    let secondsLeft = 2;
+  certCloseTimer = setInterval(() => {
+    secondsLeft--;
     countdownEl.textContent = secondsLeft;
-    certCloseTimer = setInterval(() => {
-      secondsLeft--;
-      countdownEl.textContent = secondsLeft;
-      if (secondsLeft <= 0) closeCertModal();
-    }, 1000);
-
-    // Close on tab switch / minimize
-    document.addEventListener('visibilitychange', handleVisibilityChange, { once: true });
-
-    // Block save shortcuts
-    document.addEventListener('keydown', blockSaveShortcuts, { once: true });
-
-    // Blur detection
-    window.addEventListener('blur', closeCertModal, { once: true });
-
-    // Attempt to detect screen sharing/recording
-    detectScreenCaptureAttempts();
-  }
-
-  function closeCertModal() {
-    const modal = document.getElementById('certModal');
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-    if (certCloseTimer) clearInterval(certCloseTimer);
-    document.removeEventListener('visibilitychange', handleVisibilityChange);
-    document.removeEventListener('keydown', blockSaveShortcuts);
-  }
-
-  function handleVisibilityChange() {
-    if (document.hidden) closeCertModal();
-  }
-
-  function blockSaveShortcuts(e) {
-    if (
-      (e.ctrlKey  && e.key.toLowerCase() === 's') ||
-      (e.metaKey  && e.key.toLowerCase() === 's') ||
-      e.key === 'PrintScreen'
-    ) {
-      e.preventDefault();
+    if (secondsLeft <= 0) {
       closeCertModal();
     }
-  }
+  }, 1000);
+}
 
-  function detectScreenCaptureAttempts() {
-    if (!navigator.mediaDevices?.getDisplayMedia) return;
-    const original = navigator.mediaDevices.getDisplayMedia;
-    navigator.mediaDevices.getDisplayMedia = async function(...args) {
-      closeCertModal();
-      navigator.mediaDevices.getDisplayMedia = original;
-      return original.apply(navigator.mediaDevices, args);
-    };
+function closeCertModal() {
+  const modal = document.getElementById('certModal');
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+
+  if (certCloseTimer) {
+    clearInterval(certCloseTimer);
+    certCloseTimer = null;
   }
+}
   </script>
 
 </body>
