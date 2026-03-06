@@ -203,6 +203,23 @@
           </div>
         </div>
 
+        <!-- NEW: Small certificate showcase container -->
+        <div class="bg-white rounded-xl shadow-sm border border-zinc-200 p-6 mb-12 max-w-3xl mx-auto text-center">
+          <h3 class="text-xl font-semibold text-zinc-800 mb-4">Certified Course Facilitator</h3>
+          <p class="text-sm text-zinc-600 mb-5">
+            View my professional certification(s) — click image to enlarge (secure preview)
+          </p>
+          <div class="flex flex-wrap justify-center gap-6">
+            <!-- Certificate 1 thumbnail -->
+            <div class="cursor-pointer transition hover:scale-105" onclick="openCertModal('cert1')">
+              <img 
+                src="assets/certificate.jfif" 
+                alt="Certified Course Facilitator Certificate" 
+                class="w-48 h-auto rounded-lg shadow border border-zinc-300 object-cover"
+                loading="lazy"
+              >
+            </div>
+
         <!-- Who it's for + Benefits -->
         <div class="bg-zinc-100 rounded-2xl p-10 md:p-12 mb-16">
           <h2 class="text-3xl font-bold text-center mb-8">Who Should Attend?</h2>
@@ -238,6 +255,26 @@
         </div>
       </div>
     </section>
+
+          <!-- NEW: Certificate Viewer Modal -->
+    <div id="certModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden" onclick="closeCertModal(event)">
+      <div class="relative max-w-4xl max-h-[90vh] mx-4">
+        <button 
+          class="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition"
+          onclick="closeCertModal()"
+        >&times;</button>
+        
+        <!-- Full certificate image -->
+        <img 
+          id="fullCertImage" 
+          src="" 
+          alt="Full Certificate View" 
+          class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain bg-white p-2"
+        >
+      </div>
+    </div>
+
+          
 
     <footer class="bg-zinc-900 text-white/80 py-12 text-center text-sm border-t border-zinc-800">
       © March 2026 Francis Obinna Madubuike
@@ -275,6 +312,34 @@
         alert('Could not copy link – please copy manually');
       });
     }
+
+    function openCertModal(certId) {
+      const modal = document.getElementById('certModal');
+      const img = document.getElementById('fullCertImage');
+      
+      // Map thumbnail to full image path (update paths as needed)
+      const certMap = {
+        'cert1': 'assets/certificate.jfif',
+        // add more if you have additional certificates
+      };
+
+      img.src = certMap[certId] || '';
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+    }
+
+    function closeCertModal(e) {
+      const modal = document.getElementById('certModal');
+      if (!e || e.target === modal || e.target.tagName === 'BUTTON') {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeCertModal();
+    });
   </script>
 
 </body>
