@@ -135,15 +135,30 @@
     <section class="hero-bg text-white py-16 md:py-12">
       <div class="max-w-5xl mx-auto px-5 text-center">
         <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight font-['Roboto']">Hello, I'm Francis Obinna Madubuike</h1>
-        <p class="mt-5 text-xl md:text-2xl max-w-4xl mx-auto font-light">
-          Dr. Obinna Madubuike is a dedicated project manager and course facilitator known for his strong 
-          work ethic and commitment to excellence. As a Ph.D. holder, he brings a high level of analytical thinking, 
-          research expertise, and strategic insight to his professional work. Dr. Madubuike has experience coordinating 
-          projects, facilitating learning programs, and mentoring individuals in academic and professional settings. 
-          He is passionate about knowledge sharing, effective leadership, and delivering impactful results through 
-          collaboration and innovation. Recognized for his diligence, professionalism, and reliability, 
-          he consistently strives to create meaningful outcomes in both project management and educational environments.
-        </p>
+        <div class="mt-5 text-xl md:text-2xl max-w-4xl mx-auto font-light">
+      <!-- Short version + toggle -->
+      <div id="bio-short" class="inline">
+        Dr. Obinna Madubuike is a dedicated project manager and course facilitator known for his strong work ethic and commitment to excellence. As a Ph.D. holder, he brings analytical thinking, research expertise, and strategic insight to his work...
+        <button onclick="document.getElementById('bio-full').classList.remove('hidden'); this.classList.add('hidden')" 
+                class="ml-2 text-blue-300 hover:text-blue-100 font-medium underline">
+          Read more
+        </button>
+      </div>
+      
+      <div id="bio-full" class="hidden">
+        Dr. Obinna Madubuike is a dedicated project manager and course facilitator known for his strong
+        work ethic and commitment to excellence. As a Ph.D. holder, he brings a high level of analytical thinking,
+        research expertise, and strategic insight to his professional work. Dr. Madubuike has experience coordinating
+        projects, facilitating learning programs, and mentoring individuals in academic and professional settings.
+        He is passionate about knowledge sharing, effective leadership, and delivering impactful results through
+        collaboration and innovation. Recognized for his diligence, professionalism, and reliability,
+        he consistently strives to create meaningful outcomes in both project management and educational environments.
+        <button onclick="document.getElementById('bio-short').classList.remove('hidden'); this.parentElement.classList.add('hidden')" 
+                class="ml-2 text-blue-300 hover:text-blue-100 font-medium underline">
+          Show less
+        </button>
+      </div>
+    </div>
         <div class="mt-12 flex flex-wrap justify-center gap-6">
           <button onclick="showModal('resumeModal')"
                   class="bg-white text-blue-700 px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-zinc-100 transition shadow-lg">
@@ -184,20 +199,36 @@
 
     <!-- RESEARCH PORTFOLIO -->
     <section class="max-w-7xl mx-auto px-6 md:px-8 py-20">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">Research Portfolio</h2>
-      <p class="text-center text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-        Dr. Obinna C. Madubuike's research primarily focuses on the application of digital twin technology in the 
-        construction and healthcare facility management sectors. Across his studies, Madubuike examines how digital 
-        twins—virtual representations of physical assets that receive real-time data from sensors and connected 
-        systems—can improve the monitoring, operation, and maintenance of buildings and infrastructure. His research 
-        highlights the limitations of traditional facility management approaches, which often rely on reactive “fix-when-broken” 
-        maintenance, and proposes digital twin–based frameworks that integrate technologies such as Building Information 
-        Modeling (BIM), IoT sensors, and data analytics to enable real-time monitoring, predictive maintenance, 
-        and better decision-making throughout the lifecycle of facilities. The articles also include systematic 
-        and bibliometric reviews of digital twin applications in construction and the built environment, identifying 
-        current research trends, benefits, and gaps, and outlining scenarios and architectures for deploying digital 
-        twin systems in healthcare facilities and other constructed assets to improve efficiency, reliability, and asset management.
-      </p>
+  <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">Research Portfolio</h2>
+  
+  <div class="text-center text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+    <!-- Short version + toggle -->
+    <div id="research-short" class="inline">
+      Dr. Obinna C. Madubuike's research focuses on applying digital twin technology in construction and healthcare facility management. He explores how virtual representations of physical assets—powered by real-time sensor data—can improve monitoring, maintenance, and decision-making...
+      <button onclick="document.getElementById('research-full').classList.remove('hidden'); this.classList.add('hidden')" 
+              class="ml-2 text-blue-600 hover:text-blue-800 font-medium underline">
+        Read more
+      </button>
+    </div>
+    
+    <div id="research-full" class="hidden">
+      Dr. Obinna C. Madubuike's research primarily focuses on the application of digital twin technology in the
+      construction and healthcare facility management sectors. Across his studies, Madubuike examines how digital
+      twins—virtual representations of physical assets that receive real-time data from sensors and connected
+      systems—can improve the monitoring, operation, and maintenance of buildings and infrastructure. His research
+      highlights the limitations of traditional facility management approaches, which often rely on reactive “fix-when-broken”
+      maintenance, and proposes digital twin–based frameworks that integrate technologies such as Building Information
+      Modeling (BIM), IoT sensors, and data analytics to enable real-time monitoring, predictive maintenance,
+      and better decision-making throughout the lifecycle of facilities. The articles also include systematic
+      and bibliometric reviews of digital twin applications in construction and the built environment, identifying
+      current research trends, benefits, and gaps, and outlining scenarios and architectures for deploying digital
+      twin systems in healthcare facilities and other constructed assets to improve efficiency, reliability, and asset management.
+      <button onclick="document.getElementById('research-short').classList.remove('hidden'); this.parentElement.classList.add('hidden')" 
+              class="ml-2 text-blue-600 hover:text-blue-800 font-medium underline">
+        Show less
+      </button>
+    </div>
+  </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 md:gap-8">
         <!-- 1 -->
