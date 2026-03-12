@@ -147,62 +147,122 @@
       </div>
     </section>
 
-    <!-- MAIN SERVICE CONTENT -->
-    <section class="max-w-5xl mx-auto px-6 md:px-8 py-16">
-      <div class="prose prose-lg max-w-none text-zinc-700">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">What I Offer</h2>
+   <!-- PREVIOUS LECTURES & SEMINARS SECTION -->
+<section class="max-w-5xl mx-auto px-6 md:px-8 py-16 bg-gray-50">
+  <div class="prose prose-lg max-w-none text-zinc-700">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Previous Lectures & Seminars Delivered</h2>
+    <p class="text-center mb-12 text-lg leading-relaxed">
+      Guest lectures, seminars, and course facilitation delivered at prestigious institutions worldwide, covering digital twins, lean construction, strategic project management, digitalization in infrastructure, and related topics in construction and facilities management.
+    </p>
 
-        <p class="text-center mb-12 text-lg">
-          Tailored workshops, short courses, seminars, and training sessions designed for professionals, 
-          students, researchers, construction firms, academic institutions, and organizations seeking to build capacity 
-          in modern construction practices and research skills.
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Lecture 1 -->
+      <div class="group bg-white p-6 rounded-2xl shadow-md border border-zinc-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-400 transition-all duration-300 ease-out flex flex-col">
+        <h3 class="text-xl font-bold mb-4 text-blue-700">Strategic Project Management and Data-Driven Decisions for Business</h3>
+        <p class="text-sm text-zinc-600 mb-4 flex-grow">
+          Course Facilitator – Focused on strategic approaches, data-informed decisions, risk management, and agile methodologies in project environments.
         </p>
+        <p class="text-xs text-zinc-500 mb-4 italic">University of Lagos Business School, Yaba, Lagos, Nigeria</p>
+        <button onclick="showModal('summaryModal1')"
+                class="mt-auto self-start bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">
+          View Details
+        </button>
+      </div>
 
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
-          <!-- Course 1 -->
-          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-            <h3 class="text-2xl font-bold mb-4 text-blue-700">Leadership & Project Management in Construction</h3>
-            <ul class="list-disc list-inside space-y-2 text-[15px]">
-              <li>Modern PM frameworks adapted to construction and digital projects</li>
-              <li>Risk identification, mitigation, and contingency planning</li>
-              <li>Stakeholder management and communication in multidisciplinary teams</li>
-              <li>Agile vs. traditional approaches in built environment projects</li>
-            </ul>
-          </div>
+      <!-- Lecture 2 -->
+      <div class="group bg-white p-6 rounded-2xl shadow-md border border-zinc-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-400 transition-all duration-300 ease-out flex flex-col">
+        <h3 class="text-xl font-bold mb-4 text-blue-700">Lean Construction</h3>
+        <p class="text-sm text-zinc-600 mb-4 flex-grow">
+          Introduction to lean principles, waste reduction, value stream mapping, and efficient workflows in construction projects.
+        </p>
+        <p class="text-xs text-zinc-500 mb-4 italic">Alfred State College of Technology, State University of New York</p>
+        <button onclick="showModal('summaryModal2')"
+                class="mt-auto self-start bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">
+          View Details
+        </button>
+      </div>
 
-          <!-- Course 2 -->
-          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-            <h3 class="text-2xl font-bold mb-4 text-blue-700">Research Methodology & Academic Writing</h3>
-            <ul class="list-disc list-inside space-y-2 text-[15px]">
-              <li>Designing robust research questions and objectives</li>
-              <li>Literature review strategies and systematic review methods</li>
-              <li>Qualitative & quantitative data collection and analysis</li>
-              <li>Academic writing, structuring papers, responding to reviewers</li>
-            </ul>
-          </div>
+      <!-- Lecture 3 -->
+      <div class="group bg-white p-6 rounded-2xl shadow-md border border-zinc-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-400 transition-all duration-300 ease-out flex flex-col">
+        <h3 class="text-xl font-bold mb-4 text-blue-700">Digitalization and the Future of Resilient Transport Infrastructure in Urban Africa</h3>
+        <p class="text-sm text-zinc-600 mb-4 flex-grow">
+          Explored digital tools and strategies for building resilient urban transport systems, with emphasis on African contexts.
+        </p>
+        <p class="text-xs text-zinc-500 mb-4 italic">University of Lagos, Yaba, Lagos, Nigeria – African Universities Alliance (ARUA)</p>
+        <button onclick="showModal('summaryModal3')"
+                class="mt-auto self-start bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">
+          View Details
+        </button>
+      </div>
 
-          <!-- Course 3 -->
-          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-            <h3 class="text-2xl font-bold mb-4 text-blue-700">Digital Twins & Construction 4.0</h3>
-            <ul class="list-disc list-inside space-y-2 text-[15px]">
-              <li>Fundamentals of digital twins in the built environment</li>
-              <li>Applications in design, construction, operations & maintenance</li>
-              <li>Integration with BIM, IoT, and cyber-physical systems</li>
-              <li>Case studies and emerging trends (2025–2030 outlook)</li>
-            </ul>
-          </div>
+      <!-- Digital Twins Grouped Card (combines two similar) -->
+      <div class="group bg-white p-6 rounded-2xl shadow-md border border-zinc-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-400 transition-all duration-300 ease-out flex flex-col md:col-span-2 lg:col-span-1">
+        <h3 class="text-xl font-bold mb-4 text-blue-700">Digital Twins Applications in Healthcare, Design & Facilities Management</h3>
+        <p class="text-sm text-zinc-600 mb-4 flex-grow">
+          Covered evaluation and impact of digital twins for healthcare facilities management, design architecture, operations, and real-time asset monitoring.
+        </p>
+        <p class="text-xs text-zinc-500 mb-2 italic">Institutions:</p>
+        <ul class="text-xs text-zinc-600 list-disc pl-5 space-y-1 mb-4">
+          <li>Georgia Institute of Technology, School of Building Construction, College of Design – "Evaluation of Digital Twin Application for Healthcare Facilities Management"</li>
+          <li>Prince Sultan University, Interior Design Department, College of Architecture and Design – Built Environment Research Lab Seminar Series: "Digital Twins: Impact on Design Architecture and Facilities Management"</li>
+        </ul>
+        <button onclick="showModal('summaryModal4')"
+                class="mt-auto self-start bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <!-- Course 4 -->
-          <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition border border-zinc-100">
-            <h3 class="text-2xl font-bold mb-4 text-blue-700">Data Analysis & Visualization for Construction</h3>
-            <ul class="list-disc list-inside space-y-2 text-[15px]">
-              <li>Excel, Power BI, Python/R basics for construction data</li>
-              <li>Project performance dashboards and KPI tracking</li>
-              <li>Statistical methods for delay/risk analysis</li>
-              <li>Interpreting and presenting data to stakeholders</li>
-            </ul>
-          </div>
-        </div>
+<!-- Modals (simple, duplicate/customize as needed) -->
+<div id="summaryModal1" class="modal hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl relative">
+    <button onclick="hideModal('summaryModal1')" class="absolute top-4 right-4 text-zinc-500 hover:text-zinc-800 text-3xl">&times;</button>
+    <h3 class="text-2xl font-bold mb-6 text-blue-700">Strategic Project Management and Data-Driven Decisions for Business</h3>
+    <p class="text-zinc-700 mb-4"><strong>Institution:</strong> University of Lagos Business School, Yaba, Lagos, Nigeria</p>
+    <p class="text-zinc-700 leading-relaxed">
+      Served as Course Facilitator, delivering content on strategic project management principles, leveraging data for informed business and project decisions, risk frameworks, stakeholder engagement, and adaptation of agile/traditional methodologies.
+    </p>
+  </div>
+</div>
+
+<div id="summaryModal2" class="modal hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl relative">
+    <button onclick="hideModal('summaryModal2')" class="absolute top-4 right-4 text-zinc-500 hover:text-zinc-800 text-3xl">&times;</button>
+    <h3 class="text-2xl font-bold mb-6 text-blue-700">Lean Construction</h3>
+    <p class="text-zinc-700 mb-4"><strong>Institution:</strong> Alfred State College of Technology, State University of New York</p>
+    <p class="text-zinc-700 leading-relaxed">
+      Guest lecture/presentation introducing lean construction concepts, including waste elimination, continuous improvement, value stream optimization, and practical applications in modern construction projects.
+    </p>
+  </div>
+</div>
+
+<div id="summaryModal3" class="modal hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl relative">
+    <button onclick="hideModal('summaryModal3')" class="absolute top-4 right-4 text-zinc-500 hover:text-zinc-800 text-3xl">&times;</button>
+    <h3 class="text-2xl font-bold mb-6 text-blue-700">Digitalization and the Future of Resilient Transport Infrastructure in Urban Africa</h3>
+    <p class="text-zinc-700 mb-4"><strong>Institution:</strong> University of Lagos, Yaba, Lagos, Nigeria – African Universities Alliance (ARUA)</p>
+    <p class="text-zinc-700 leading-relaxed">
+      Seminar exploring the role of digital technologies in developing resilient, future-proof transport infrastructure, with particular focus on urban challenges and opportunities in African cities.
+    </p>
+  </div>
+</div>
+
+<div id="summaryModal4" class="modal hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl relative">
+    <button onclick="hideModal('summaryModal4')" class="absolute top-4 right-4 text-zinc-500 hover:text-zinc-800 text-3xl">&times;</button>
+    <h3 class="text-2xl font-bold mb-6 text-blue-700">Digital Twins Applications in Healthcare, Design & Facilities Management</h3>
+    <p class="text-zinc-700 mb-4"><strong>Institutions:</strong></p>
+    <ul class="list-disc pl-6 text-zinc-700 mb-4 space-y-2">
+      <li>Georgia Institute of Technology, School of Building Construction, College of Design – "Evaluation of Digital Twin Application for Healthcare Facilities Management"</li>
+      <li>Prince Sultan University, Interior Design Department, College of Architecture and Design – Built Environment Research Lab Seminar Series: "Digital Twins: Impact on Design Architecture and Facilities Management"</li>
+    </ul>
+    <p class="text-zinc-700 leading-relaxed">
+      Presented research and practical insights on digital twin technology for real-time monitoring, predictive maintenance, lifecycle management, and enhanced decision-making in healthcare facilities, architectural design, and built environment operations.
+    </p>
+  </div>
+</div>
 
     <!-- CERTIFICATE CONTAINER – simple version -->
     <div class="bg-white rounded-xl shadow-sm border border-zinc-200 p-6 mb-12 max-w-3xl mx-auto text-center">
