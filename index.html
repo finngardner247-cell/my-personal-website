@@ -519,11 +519,21 @@
 
     <script>
       function showModal(id) {
-        document.getElementById(id).classList.add("show");
+      document.getElementById(id).classList.add("show");
+      document.body.classList.add("menu-open");
+    }
+
+    function hideModal(id) {
+      document.getElementById(id).classList.remove("show");
+      document.body.classList.remove("menu-open");
+    }
+
+    // Close modal on outside click
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal") && e.target.classList.contains("show")) {
+        hideModal(e.target.id);
       }
-      function hideModal(id) {
-        document.getElementById(id).classList.remove("show");
-      }
+    });
 
       function toggleDropdown(btn) {
         const group = btn.parentElement;
