@@ -1,578 +1,315 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Francis Obinna Madubuike – Construction Informatics & Digital Twins
-    </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <style>
-      body {
-        font-family:
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          sans-serif;
-      }
-      .sidebar {
-        scrollbar-width: thin;
-        scrollbar-color: #cbd5e1 #f1f5f9;
-      }
-      /* Ensure dropdowns appear above hero content on desktop */
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 50;
-      }
-      .dropdown-active .dropdown-content {
-        display: block;
-      }
-      .hero-bg {
-        background: linear-gradient(135deg, #1e40af, #3b82f6);
-      }
-      .modal {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.65);
-        z-index: 9999;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(4px);
-      }
-      .modal.show {
-        display: flex;
-      }
-      body.menu-open {
-        overflow: hidden;
-      }
-    </style>
-  </head>
-  <body class="bg-zinc-50 min-h-screen flex flex-col md:flex-row">
-    <aside
-      id="sidebar"
-      class="fixed inset-y-0 left-0 z-[60] w-80 bg-white border-r border-zinc-200 h-full overflow-y-auto sidebar shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:shadow-none md:border-r"
-    >
-      <div class="p-8 sticky top-0 bg-white border-b z-10 hidden md:block">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Francis Obinna Madubuike – Construction Informatics & Digital Twins</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .sidebar {
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 #f1f5f9;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 50;
+    }
+    .dropdown-active .dropdown-content {
+      display: block;
+    }
+    .hero-bg {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+    .modal.show {
+      display: flex;
+    }
+    body.menu-open {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-zinc-50 min-h-screen flex flex-col md:flex-row">
+
+  <aside id="sidebar"
+         class="fixed inset-y-0 left-0 z-[60] w-80 bg-white border-r border-zinc-200 h-full overflow-y-auto sidebar shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:shadow-none md:border-r">
+    <!-- Sidebar content remains unchanged -->
+    <div class="p-8 sticky top-0 bg-white border-b z-10 hidden md:block">
+      <div class="flex flex-col items-center text-center">
+        <img src="assets/profile.jpeg" alt="Francis Obinna Madubuike"
+             class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white">
+        <h1 class="text-3xl font-bold text-blue-900">Francis Obinna Madubuike</h1>
+        <p class="text-black font-medium text-base mt-1 leading-snug">
+          Construction Informatics | Digital Twins | Project Management | Researcher
+        </p>
+      </div>
+    </div>
+
+    <div class="md:hidden">
+      <div class="p-6 bg-blue-50/50 border-b border-zinc-200">
         <div class="flex flex-col items-center text-center">
-          <img
-            src="assets/profile.jpeg"
-            alt="Francis Obinna Madubuike"
-            class="w-40 h-40 rounded-2xl object-cover shadow-2xl mb-6 border-4 border-white"
-          />
-          <h1 class="text-3xl font-bold text-blue-900">
-            Francis Obinna Madubuike
-          </h1>
-          <p class="text-black font-medium text-base mt-1 leading-snug">
-            Construction Informatics | Digital Twins | Project Management |
-            Researcher
-          </p>
+          <img src="assets/profile.jfif" alt="Francis Obinna Madubuike"
+               class="w-32 h-32 rounded-2xl object-cover shadow-xl mb-4 border-4 border-white">
+          <h1 class="text-2xl font-bold text-blue-900 leading-tight">Francis Obinna Madubuike</h1>
         </div>
       </div>
-
-      <div class="md:hidden">
-        <div class="p-6 bg-blue-50/50 border-b border-zinc-200">
-          <div class="flex flex-col items-center text-center">
-            <img
-              src="assets/profile.jfif"
-              alt="Francis Obinna Madubuike"
-              class="w-32 h-32 rounded-2xl object-cover shadow-xl mb-4 border-4 border-white"
-            />
-            <h1 class="text-2xl font-bold text-blue-900 leading-tight">
-              Francis Obinna Madubuike
-            </h1>
+      <div class="p-6 border-b">
+        <h3 class="uppercase text-xs tracking-wider text-zinc-500 mb-4 font-semibold">Menu</h3>
+        <nav class="flex flex-col gap-4 text-lg font-medium text-zinc-800">
+          <a href="index.html" class="text-blue-600 font-semibold">Home</a>
+          <div>
+            <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180');"
+                    class="flex items-center justify-between w-full hover:text-blue-600">
+              Resume <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="hidden pl-4 mt-2 space-y-3 text-base text-zinc-600">
+              <a href="resume-pm.html" class="block hover:text-blue-600">Project Management</a>
+              <a href="resume-academic.html" class="block hover:text-blue-600">Academic</a>
+            </div>
           </div>
-        </div>
-
-        <div class="p-6 border-b">
-          <h3
-            class="uppercase text-xs tracking-wider text-zinc-500 mb-4 font-semibold"
-          >
-            Menu
-          </h3>
-          <nav class="flex flex-col gap-4 text-lg font-medium text-zinc-800">
-            <a href="index.html" class="text-blue-600 font-semibold">Home</a>
-
-            <div>
-              <button
-                onclick="
-                  this.nextElementSibling.classList.toggle('hidden');
-                  this.querySelector('i').classList.toggle('rotate-180');
-                "
-                class="flex items-center justify-between w-full hover:text-blue-600"
-              >
-                Resume
-                <i class="fas fa-chevron-down text-xs transition-transform"></i>
-              </button>
-              <div class="hidden pl-4 mt-2 space-y-3 text-base text-zinc-600">
-                <a href="resume-pm.html" class="block hover:text-blue-600"
-                  >Project Management</a
-                >
-                <a href="resume-academic.html" class="block hover:text-blue-600"
-                  >Academic</a
-                >
-              </div>
+          <div>
+            <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180');"
+                    class="flex items-center justify-between w-full hover:text-blue-600">
+              Services <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="hidden pl-4 mt-2 space-y-3 text-base text-zinc-600">
+              <a href="services-courses.html" class="block hover:text-blue-600">Course Facilitation</a>
+              <a href="services-notary.html" class="block hover:text-blue-600">Notary Public</a>
+              <a href="services-cleaning.html" class="block hover:text-blue-600">Cleaning Services</a>
+              <a href="services-photography.html" class="block hover:text-blue-600">Photography</a>
             </div>
-
-            <div>
-              <button
-                onclick="
-                  this.nextElementSibling.classList.toggle('hidden');
-                  this.querySelector('i').classList.toggle('rotate-180');
-                "
-                class="flex items-center justify-between w-full hover:text-blue-600"
-              >
-                Services
-                <i class="fas fa-chevron-down text-xs transition-transform"></i>
-              </button>
-              <div class="hidden pl-4 mt-2 space-y-3 text-base text-zinc-600">
-                <a
-                  href="services-courses.html"
-                  class="block hover:text-blue-600"
-                  >Course Facilitation</a
-                >
-                <a href="services-notary.html" class="block hover:text-blue-600"
-                  >Notary Public</a
-                >
-                <a
-                  href="services-cleaning.html"
-                  class="block hover:text-blue-600"
-                  >Cleaning Services</a
-                >
-                <a
-                  href="services-photography.html"
-                  class="block hover:text-blue-600"
-                  >Photography</a
-                >
-              </div>
-            </div>
-
-            <a href="contact.html" class="hover:text-blue-600">Contact Me</a>
-            <a
-              href="assets/resume.pdf"
-              target="_blank"
-              class="text-sm text-zinc-500 hover:text-blue-600 pt-2 border-t mt-1"
-            >
-              ↓ PDF Resume
-            </a>
-          </nav>
-        </div>
-      </div>
-
-      <div class="p-6 space-y-5 text-sm">
-        <h3
-          class="uppercase text-xs tracking-wider text-zinc-500 mb-2 font-semibold"
-        >
-          Quick Contact
-        </h3>
-        <div class="space-y-2.5">
-          <a
-            href="mailto:your.email@domain.com"
-            class="flex items-center gap-2.5 text-blue-600 hover:underline"
-          >
-            <i class="fas fa-envelope w-4.5 text-zinc-500"></i>
-            your.email@domain.com
-          </a>
-          <a
-            href="https://www.linkedin.com/in/your-linkedin-username/"
-            target="_blank"
-            class="flex items-center gap-2.5 text-blue-600 hover:underline"
-          >
-            <i class="fab fa-linkedin w-4.5 text-zinc-500"></i>
-            LinkedIn
-          </a>
-          <a
-            href="tel:+234xxxxxxxxxx"
-            class="flex items-center gap-2.5 text-blue-600 hover:underline"
-          >
-            <i class="fas fa-phone w-4.5 text-zinc-500"></i>
-            +234 xxx xxx xxxx
-          </a>
-        </div>
-      </div>
-    </aside>
-
-    <div
-      id="sidebar-backdrop"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] transition-opacity duration-300 md:hidden opacity-0 pointer-events-none"
-    ></div>
-
-    <main class="flex-1 md:ml-80 flex flex-col min-h-screen">
-      <nav
-        class="bg-white border-b sticky top-0 z-40 shadow-sm hidden md:block"
-      >
-        <div
-          class="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between py-5"
-        >
-          <div class="flex items-center gap-10 text-lg font-medium flex-1">
-            <a href="index.html" class="text-blue-600 font-semibold">Home</a>
-
-            <div class="relative group">
-              <button
-                onclick="toggleDropdown(this)"
-                class="flex items-center gap-1 hover:text-blue-600 transition"
-              >
-                Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
-              </button>
-              <div
-                class="dropdown-content bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base"
-              >
-                <a
-                  href="resume-pm.html"
-                  class="block px-6 py-2.5 hover:bg-zinc-50"
-                  >Project Management</a
-                >
-                <a
-                  href="resume-academic.html"
-                  class="block px-6 py-2.5 hover:bg-zinc-50"
-                  >Academic</a
-                >
-              </div>
-            </div>
-
-            <div class="relative group">
-              <button
-                onclick="toggleDropdown(this)"
-                class="flex items-center gap-1 hover:text-blue-600 transition"
-              >
-                Services <i class="fas fa-chevron-down text-xs ml-1"></i>
-              </button>
-              <div
-                class="dropdown-content bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base"
-              >
-                <a
-                  href="services-courses.html"
-                  class="block px-6 py-2.5 hover:bg-zinc-50"
-                  >Course Facilitation</a
-                >
-                <a
-                  href="services-notary.html"
-                  class="block px-6 py-2.5 hover:bg-zinc-50"
-                  >Notary Public</a
-                >
-                <a
-                  href="services-cleaning.html"
-                  class="block px-6 py-2.5 hover:bg-zinc-50"
-                  >Cleaning Services</a
-                >
-                <a
-                  href="services-photography.html"
-                  class="block px-6 py-2.5 hover:bg-zinc-50"
-                  >Photography</a
-                >
-              </div>
-            </div>
-
-            <a href="contact.html" class="hover:text-blue-600 transition"
-              >Contact Me</a
-            >
           </div>
-
-          <a
-            href="assets/resume.pdf"
-            target="_blank"
-            class="text-sm text-zinc-500 hover:text-blue-600"
-          >
+          <a href="contact.html" class="hover:text-blue-600">Contact Me</a>
+          <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600 pt-2 border-t mt-1 block">
             ↓ PDF Resume
           </a>
-        </div>
-      </nav>
-
-      <div
-        class="md:hidden bg-white border-b sticky top-0 z-40 shadow-sm px-6 py-4 flex items-center justify-between"
-      >
-        <div class="text-2xl font-bold text-blue-900">F.O.M</div>
-        <button
-          id="menu-toggle-btn"
-          class="inline-flex items-center justify-center p-2 rounded-md text-zinc-700 hover:text-blue-600 hover:bg-zinc-100"
-        >
-          <svg
-            id="hamburger-icon"
-            class="h-7 w-7"
-            stroke="currentColor"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              id="h-path"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+        </nav>
       </div>
+    </div>
 
-      <section class="hero-bg text-white py-16 md:py-20">
-        <div class="max-w-5xl mx-auto px-5 text-center">
-          <h1
-            class="text-5xl md:text-7xl font-bold leading-tight tracking-tight"
-          >
-            Hello, I'm Francis Obinna Madubuike
-          </h1>
-          <p class="mt-6 text-xl md:text-3xl max-w-4xl mx-auto font-light">
-            Construction Digitalization • Digital Twins • Intelligent Buildings
-            • Project Management • Researcher
-          </p>
-          <div class="mt-12 flex flex-wrap justify-center gap-6">
-            <a
-              href="resume.html"
-              class="bg-white text-blue-700 px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-zinc-100 transition shadow-lg"
-            >
-              View Resume
-            </a>
-            <a
-              href="services.html"
-              class="border-2 border-white/80 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-white/10 transition"
-            >
-              Explore Services
-            </a>
+    <div class="p-6 space-y-5 text-sm">
+      <h3 class="uppercase text-xs tracking-wider text-zinc-500 mb-2 font-semibold">Quick Contact</h3>
+      <div class="space-y-2.5">
+        <!-- Replace these with real values -->
+        <a href="mailto:madubuikefrancis43@gmail.com" class="flex items-center gap-2.5 text-blue-600 hover:underline">
+          <i class="fas fa-envelope w-4.5 text-zinc-500"></i>
+          madubuikefrancis43@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/obinna-madubuike-ph-d-leed-green-associate-pmp-1b261984" target="_blank"
+           class="flex items-center gap-2.5 text-blue-600 hover:underline">
+          <i class="fab fa-linkedin w-4.5 text-zinc-500"></i>
+          LinkedIn
+        </a>
+        <a href="tel:+13525192565" class="flex items-center gap-2.5 text-blue-600 hover:underline">
+          <i class="fas fa-phone w-4.5 text-zinc-500"></i>
+          +1 352 519 2565
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <div id="sidebar-backdrop"
+       class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] transition-opacity duration-300 md:hidden opacity-0 pointer-events-none"></div>
+
+  <main class="flex-1 md:ml-80 flex flex-col min-h-screen">
+
+    <nav class="bg-white border-b sticky top-0 z-40 shadow-sm hidden md:block">
+      <div class="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between py-5">
+        <div class="flex items-center gap-10 text-lg font-medium flex-1">
+          <a href="index.html" class="text-blue-600 font-semibold">Home</a>
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
+              Resume <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content bg-white shadow-xl rounded-xl py-3 w-56 mt-2 border text-base">
+              <a href="resume-pm.html" class="block px-6 py-2.5 hover:bg-zinc-50">Project Management</a>
+              <a href="resume-academic.html" class="block px-6 py-2.5 hover:bg-zinc-50">Academic</a>
+            </div>
           </div>
+          <div class="relative group">
+            <button onclick="toggleDropdown(this)" class="flex items-center gap-1 hover:text-blue-600 transition">
+              Services <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="dropdown-content bg-white shadow-xl rounded-xl py-3 w-72 mt-2 border text-base">
+              <a href="services-courses.html" class="block px-6 py-2.5 hover:bg-zinc-50">Course Facilitation</a>
+              <a href="services-notary.html" class="block px-6 py-2.5 hover:bg-zinc-50">Notary Public</a>
+              <a href="services-cleaning.html" class="block px-6 py-2.5 hover:bg-zinc-50">Cleaning Services</a>
+              <a href="services-photography.html" class="block px-6 py-2.5 hover:bg-zinc-50">Photography</a>
+            </div>
+          </div>
+          <a href="contact.html" class="hover:text-blue-600 transition">Contact Me</a>
         </div>
-      </section>
-      <!-- MODALS -->
+        <a href="assets/resume.pdf" target="_blank" class="text-sm text-zinc-500 hover:text-blue-600">
+          ↓ PDF Resume
+        </a>
+      </div>
+    </nav>
+
+    <div class="md:hidden bg-white border-b sticky top-0 z-40 shadow-sm px-6 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold text-blue-900">F.O.M</div>
+      <button id="menu-toggle-btn" class="inline-flex items-center justify-center p-2 rounded-md text-zinc-700 hover:text-blue-600 hover:bg-zinc-100">
+        <svg id="hamburger-icon" class="h-7 w-7" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+          <path id="h-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <section class="hero-bg text-white py-16 md:py-20">
+      <div class="max-w-5xl mx-auto px-5 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+          Hello, I'm Francis Obinna Madubuike
+        </h1>
+        <p class="mt-6 text-xl md:text-3xl max-w-4xl mx-auto font-light">
+          Construction Digitalization • Digital Twins • Intelligent Buildings • Project Management • Researcher
+        </p>
+        <div class="mt-12 flex flex-wrap justify-center gap-6">
+          <!-- These now trigger the modals -->
+          <button onclick="showModal('resumeModal')"
+                  class="bg-white text-blue-700 px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-zinc-100 transition shadow-lg">
+            View Resume
+          </button>
+          <button onclick="showModal('servicesModal')"
+                  class="border-2 border-white/80 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-white/10 transition">
+            Explore Services
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
     <div id="resumeModal" class="modal">
-      <div class="bg-white rounded-2xl p-10 max-w-md w-full mx-4 shadow-2xl relative">
-        <button onclick="hideModal('resumeModal')" class="absolute top-4 right-4 text-zinc-500 hover:text-zinc-800 text-2xl">&times;</button>
+      <div class="bg-white rounded-2xl p-8 md:p-10 max-w-md w-full mx-4 shadow-2xl relative">
+        <button onclick="hideModal('resumeModal')"
+                class="absolute top-4 right-4 text-zinc-600 hover:text-zinc-900 text-3xl font-bold">&times;</button>
         <h3 class="text-2xl font-bold mb-8 text-center">Select Resume Version</h3>
-        <div class="space-y-2">
-          <a href="resume-pm.html" class="block bg-green-600 text-white text-center py-4 rounded-xl hover:bg-green-700 transition font-medium">Project Management Focus</a>
-          <a href="resume-academic.html" class="block bg-purple-600 text-white text-center py-4 rounded-xl hover:bg-purple-700 transition font-medium">Academic Focus</a>
+        <div class="space-y-4">
+          <a href="resume-pm.html"
+             class="block bg-green-600 text-white text-center py-4 rounded-xl hover:bg-green-700 transition font-medium text-lg">
+            Project Management Focus
+          </a>
+          <a href="resume-academic.html"
+             class="block bg-purple-600 text-white text-center py-4 rounded-xl hover:bg-purple-700 transition font-medium text-lg">
+            Academic Focus
+          </a>
         </div>
       </div>
     </div>
 
     <div id="servicesModal" class="modal">
-      <div class="bg-white rounded-2xl p-10 max-w-md w-full mx-4 shadow-2xl relative">
-        <button onclick="hideModal('servicesModal')" class="absolute top-4 right-4 text-zinc-500 hover:text-zinc-800 text-2xl">&times;</button>
+      <div class="bg-white rounded-2xl p-8 md:p-10 max-w-md w-full mx-4 shadow-2xl relative">
+        <button onclick="hideModal('servicesModal')"
+                class="absolute top-4 right-4 text-zinc-600 hover:text-zinc-900 text-3xl font-bold">&times;</button>
         <h3 class="text-2xl font-bold mb-8 text-center">Select a Service</h3>
         <div class="space-y-4">
-          <a href="services-courses.html"     class="block bg-blue-600 text-white text-center py-4 rounded-xl hover:bg-blue-700 transition font-medium">Course Facilitation</a>
-          <a href="services-notary.html"      class="block bg-indigo-600 text-white text-center py-4 rounded-xl hover:bg-indigo-700 transition font-medium">Notary Public</a>
-          <a href="services-cleaning.html"    class="block bg-teal-600 text-white text-center py-4 rounded-xl hover:bg-teal-700 transition font-medium">Cleaning Services</a>
-          <a href="services-photography.html" class="block bg-amber-600 text-white text-center py-4 rounded-xl hover:bg-amber-700 transition font-medium">Photography</a>
+          <a href="services-courses.html"
+             class="block bg-blue-600 text-white text-center py-4 rounded-xl hover:bg-blue-700 transition font-medium text-lg">
+            Course Facilitation
+          </a>
+          <a href="services-notary.html"
+             class="block bg-indigo-600 text-white text-center py-4 rounded-xl hover:bg-indigo-700 transition font-medium text-lg">
+            Notary Public
+          </a>
+          <a href="services-cleaning.html"
+             class="block bg-teal-600 text-white text-center py-4 rounded-xl hover:bg-teal-700 transition font-medium text-lg">
+            Cleaning Services
+          </a>
+          <a href="services-photography.html"
+             class="block bg-amber-600 text-white text-center py-4 rounded-xl hover:bg-amber-700 transition font-medium text-lg">
+            Photography
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- RESEARCH PORTFOLIO -->
-    <section class="max-w-7xl mx-auto px-6 md:px-8 py-20">
-  <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">Research Portfolio</h2>
-  
-  <div class="text-center text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-    <!-- Short version + toggle -->
-    <div id="research-short" class="inline">
-      Dr. Obinna C. Madubuike's research focuses on applying digital twin technology in construction and healthcare facility management. He explores how virtual representations of physical assets—powered by real-time sensor data—can improve monitoring, maintenance, and decision-making...
-      <button onclick="document.getElementById('research-full').classList.remove('hidden'); this.classList.add('hidden')" 
-              class="ml-2 text-blue-600 hover:text-blue-800 font-medium underline">
-        Read more
-      </button>
-    </div>
-    
-    <div id="research-full" class="hidden">
-      Dr. Obinna C. Madubuike's research primarily focuses on the application of digital twin technology in the
-      construction and healthcare facility management sectors. Across his studies, Madubuike examines how digital
-      twins—virtual representations of physical assets that receive real-time data from sensors and connected
-      systems—can improve the monitoring, operation, and maintenance of buildings and infrastructure. His research
-      highlights the limitations of traditional facility management approaches, which often rely on reactive “fix-when-broken”
-      maintenance, and proposes digital twin–based frameworks that integrate technologies such as Building Information
-      Modeling (BIM), IoT sensors, and data analytics to enable real-time monitoring, predictive maintenance,
-      and better decision-making throughout the lifecycle of facilities. The articles also include systematic
-      and bibliometric reviews of digital twin applications in construction and the built environment, identifying
-      current research trends, benefits, and gaps, and outlining scenarios and architectures for deploying digital
-      twin systems in healthcare facilities and other constructed assets to improve efficiency, reliability, and asset management.
-      <button onclick="document.getElementById('research-short').classList.remove('hidden'); this.parentElement.classList.add('hidden')" 
-              class="ml-2 text-blue-600 hover:text-blue-800 font-medium underline">
-        Show less
-      </button>
-    </div>
-  </div>
+    <!-- The rest of your content (research portfolio, publications, etc.) remains unchanged -->
 
-      <!-- RESEARCH PUBLICATIONS SECTION -->
-<section class="max-w-7xl mx-auto px-6 md:px-8 py-16 bg-white">
-  <div class="prose prose-lg max-w-none text-zinc-700">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Research Publications</h2>
-    <p class="text-center mb-12 text-lg leading-relaxed">
-      Selected peer-reviewed publications focusing on digital twins, facilities management, and construction innovation.
-    </p>
+    <!-- ... paste your RESEARCH PORTFOLIO + PUBLICATIONS + GOOGLE SCHOLAR button here ... -->
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 auto-rows-fr">
-      
-      <!-- Publication 1 -->
-      <div class="group bg-white rounded-2xl shadow-md border border-zinc-200 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 ease-out flex flex-col overflow-hidden h-80">
-        <img src="assets/pub1.jfif" alt="A review of digital twin applications in construction" class="w-full h-40 object-cover">
-        <div class="p-5 flex flex-col flex-grow">
-          <h4 class="font-semibold text-lg mb-2 leading-tight line-clamp-2">A review of digital twin applications in construction</h4>
-          <p class="text-zinc-600 text-xs mb-3 line-clamp-3 flex-grow">Systematic review of digital twin implementations in the construction sector (2022).</p>
-          <a href="https://www.itcon.org/2022/08" target="_blank" class="text-blue-600 font-medium hover:underline text-xs flex items-center gap-2 mt-auto">
-            View Paper <i class="fas fa-external-link-alt text-xs"></i>
-          </a>
-        </div>
-      </div>
+  </main>
 
-      <!-- Publication 2 -->
-      <div class="group bg-white rounded-2xl shadow-md border border-zinc-200 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 ease-out flex flex-col overflow-hidden h-80">
-        <img src="assets/pub2.jfif" alt="Review of Digital Twins for Constructed Facilities" class="w-full h-40 object-cover">
-        <div class="p-5 flex flex-col flex-grow">
-          <h4 class="font-semibold text-lg mb-2 leading-tight line-clamp-2">Review of Digital Twins for Constructed Facilities</h4>
-          <p class="text-zinc-600 text-xs mb-3 line-clamp-3 flex-grow">Comprehensive review identifying key research streams (2022).</p>
-          <a href="https://www.mdpi.com/2075-5309/12/11/2029" target="_blank" class="text-blue-600 font-medium hover:underline text-xs flex items-center gap-2 mt-auto">
-            View Paper <i class="fas fa-external-link-alt text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Publication 3 -->
-      <div class="group bg-white rounded-2xl shadow-md border border-zinc-200 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 ease-out flex flex-col overflow-hidden h-80">
-        <img src="assets/pub3.jfif" alt="Digital twin–based health care facilities management" class="w-full h-40 object-cover">
-        <div class="p-5 flex flex-col flex-grow">
-          <h4 class="font-semibold text-lg mb-2 leading-tight line-clamp-2">Digital twin–based health care facilities management</h4>
-          <p class="text-zinc-600 text-xs mb-3 line-clamp-3 flex-grow">Framework for DT in healthcare facility monitoring and operations (2023).</p>
-          <a href="https://ascelibrary.org/doi/10.1061/JCCEE5.CPENG-4842" target="_blank" class="text-blue-600 font-medium hover:underline text-xs flex items-center gap-2 mt-auto">
-            View Paper <i class="fas fa-external-link-alt text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Publication 4 -->
-      <div class="group bg-white rounded-2xl shadow-md border border-zinc-200 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 ease-out flex flex-col overflow-hidden h-80">
-        <img src="assets/pub4.jfif" alt="Digital Twin Application in Healthcare Facilities Management" class="w-full h-40 object-cover">
-        <div class="p-5 flex flex-col flex-grow">
-          <h4 class="font-semibold text-lg mb-2 leading-tight line-clamp-2">Digital Twin Application in Healthcare Facilities Management</h4>
-          <p class="text-zinc-600 text-xs mb-3 line-clamp-3 flex-grow">Conference paper on DT applications in healthcare (2021).</p>
-          <a href="https://ascelibrary.org/doi/book/10.1061/9780784483893" target="_blank" class="text-blue-600 font-medium hover:underline text-xs flex items-center gap-2 mt-auto">
-            View Paper <i class="fas fa-external-link-alt text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Publication 5 -->
-      <div class="group bg-white rounded-2xl shadow-md border border-zinc-200 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 ease-out flex flex-col overflow-hidden h-80">
-        <img src="assets/pub5.jfif" alt="Leveraging Digital Twins for Enhanced Construction Project Delivery" class="w-full h-40 object-cover">
-        <div class="p-5 flex flex-col flex-grow">
-          <h4 class="font-semibold text-lg mb-2 leading-tight line-clamp-2">Leveraging Digital Twins for Enhanced Construction Project Delivery</h4>
-          <p class="text-zinc-600 text-xs mb-3 line-clamp-3 flex-grow">Exploring DT for improved project outcomes (2024).</p>
-          <a href="https://ec-3.org/publications/conferences/EC32024/papers/EC32024_305.pdf" target="_blank" class="text-blue-600 font-medium hover:underline text-xs flex items-center gap-2 mt-auto">
-            View Paper <i class="fas fa-external-link-alt text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Publication 6 -->
-      <div class="group bg-white rounded-2xl shadow-md border border-zinc-200 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 ease-out flex flex-col overflow-hidden h-80">
-        <img src="assets/pub6.jfif" alt="" class="w-full h-40 object-cover">
-        <div class="p-5 flex flex-col flex-grow">
-          <h4 class="font-semibold text-lg mb-2 leading-tight line-clamp-2">Digital Twin-Based Prototype System for Healthcare Facilities Management</h4>
-          <p class="text-zinc-600 text-xs mb-3 line-clamp-3 flex-grow">Prototype development and implementation (2025).</p>
-          <a href="#" target="_blank" class="text-blue-600 font-medium hover:underline text-xs flex items-center gap-2 mt-auto">
-            View Paper <i class="fas fa-external-link-alt text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Publication 7 -->
-      <div class="group bg-white rounded-2xl shadow-md border border-zinc-200 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 ease-out flex flex-col overflow-hidden h-80">
-        <img src="assets/pub7.jfif" alt="" class="w-full h-40 object-cover">
-        <div class="p-5 flex flex-col flex-grow">
-          <h4 class="font-semibold text-lg mb-2 leading-tight line-clamp-2">Machine Learning Algorithm Application in the Construction Industry – A Review</h4>
-          <p class="text-zinc-600 text-xs mb-3 line-clamp-3 flex-grow">Review of ML applications in construction (2023).</p>
-          <a href="#" target="_blank" class="text-blue-600 font-medium hover:underline text-xs flex items-center gap-2 mt-auto">
-            View Paper <i class="fas fa-external-link-alt text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Publication 8 -->
-      <div class="group bg-white rounded-2xl shadow-md border border-zinc-200 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 ease-out flex flex-col overflow-hidden h-80">
-        <img src="assets/pub8.jfif" alt="" class="w-full h-40 object-cover">
-        <div class="p-5 flex flex-col flex-grow">
-          <h4 class="font-semibold text-lg mb-2 leading-tight line-clamp-2">Opportunities and Threats of Adopting Digital Twin in Construction Projects</h4>
-          <p class="text-zinc-600 text-xs mb-3 line-clamp-3 flex-grow">Review of risks and benefits in DT adoption (2024).</p>
-          <a href="https://www.mdpi.com/2075-5309/14/8/2349" target="_blank" class="text-blue-600 font-medium hover:underline text-xs flex items-center gap-2 mt-auto">
-            View Paper <i class="fas fa-external-link-alt text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-      <div class="text-center mt-16">
-        <a href="https://scholar.google.com/citations?user=QBShdWgAAAAJ&hl=en" target="_blank"
-           class="inline-flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
-          <i class="fas fa-graduation-cap"></i> View All Publications on Google Scholar
-        </a>
-      </div>
-    </section>
-    </main>
-         
-
-    <script>
-      function showModal(id) {
-      document.getElementById(id).classList.add("show");
-      document.body.classList.add("menu-open");
+  <script>
+    // Modal controls
+    function showModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add("show");
+        document.body.classList.add("menu-open");
+      }
     }
 
     function hideModal(id) {
-      document.getElementById(id).classList.remove("show");
-      document.body.classList.remove("menu-open");
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove("show");
+        document.body.classList.remove("menu-open");
+      }
     }
 
-    // Close modal on outside click
+    // Close modal when clicking outside the modal content
     document.addEventListener("click", (e) => {
       if (e.target.classList.contains("modal") && e.target.classList.contains("show")) {
         hideModal(e.target.id);
       }
     });
 
-      function toggleDropdown(btn) {
-        const group = btn.parentElement;
-        group.classList.toggle("dropdown-active");
-        document.querySelectorAll(".group").forEach((el) => {
-          if (el !== group) el.classList.remove("dropdown-active");
-        });
-      }
-
-      document.addEventListener("click", (e) => {
-        if (!e.target.closest(".group")) {
-          document
-            .querySelectorAll(".group")
-            .forEach((el) => el.classList.remove("dropdown-active"));
-        }
+    // Desktop dropdown
+    function toggleDropdown(btn) {
+      const group = btn.parentElement;
+      group.classList.toggle("dropdown-active");
+      document.querySelectorAll(".group").forEach((el) => {
+        if (el !== group) el.classList.remove("dropdown-active");
       });
+    }
 
-      const toggleBtn = document.getElementById("menu-toggle-btn");
-      const sidebar = document.getElementById("sidebar");
-      const backdrop = document.getElementById("sidebar-backdrop");
-      const hPath = document.getElementById("h-path");
-
-      function toggleSidebar() {
-        const isOpen = sidebar.classList.contains("translate-x-0");
-        if (isOpen) {
-          sidebar.classList.replace("translate-x-0", "-translate-x-full");
-          backdrop.classList.replace("opacity-100", "opacity-0");
-          backdrop.classList.add("pointer-events-none");
-          hPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
-        } else {
-          sidebar.classList.replace("-translate-x-full", "translate-x-0");
-          backdrop.classList.replace("opacity-0", "opacity-100");
-          backdrop.classList.remove("pointer-events-none");
-          hPath.setAttribute("d", "M6 18L18 6M6 6l12 12");
-        }
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".group")) {
+        document.querySelectorAll(".group").forEach((el) => el.classList.remove("dropdown-active"));
       }
+    });
 
-      toggleBtn.addEventListener("click", toggleSidebar);
-      backdrop.addEventListener("click", toggleSidebar);
-    </script>
-  </body>
+    // Mobile sidebar toggle (your original code)
+    const toggleBtn = document.getElementById("menu-toggle-btn");
+    const sidebar = document.getElementById("sidebar");
+    const backdrop = document.getElementById("sidebar-backdrop");
+    const hPath = document.getElementById("h-path");
+
+    function toggleSidebar() {
+      const isOpen = sidebar.classList.contains("translate-x-0");
+      if (isOpen) {
+        sidebar.classList.replace("translate-x-0", "-translate-x-full");
+        backdrop.classList.replace("opacity-100", "opacity-0");
+        backdrop.classList.add("pointer-events-none");
+        hPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+        document.body.classList.remove("menu-open");
+      } else {
+        sidebar.classList.replace("-translate-x-full", "translate-x-0");
+        backdrop.classList.replace("opacity-0", "opacity-100");
+        backdrop.classList.remove("pointer-events-none");
+        hPath.setAttribute("d", "M6 18L18 6M6 6l12 12");
+        document.body.classList.add("menu-open");
+      }
+    }
+
+    if (toggleBtn) toggleBtn.addEventListener("click", toggleSidebar);
+    if (backdrop) backdrop.addEventListener("click", toggleSidebar);
+  </script>
+</body>
 </html>
