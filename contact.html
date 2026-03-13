@@ -247,26 +247,7 @@
 
 <!-- JavaScript (updated with copyToClipboard function) -->
   <script>
-    function showModal(id) {
-      document.getElementById(id).classList.add('show');
-    }
-    function hideModal(id) {
-      document.getElementById(id).classList.remove('show');
-    }
-    function toggleDropdown(btn) {
-      const group = btn.parentElement;
-      group.classList.toggle('dropdown-active');
-      document.querySelectorAll('.group').forEach(el => {
-        if (el !== group) el.classList.remove('dropdown-active');
-      });
-    }
-    document.addEventListener('click', e => {
-      if (!e.target.closest('.group')) {
-        document.querySelectorAll('.group').forEach(el => el.classList.remove('dropdown-active'));
-      }
-    });
-
-    // Added function for copying portfolio link
+     // Added function for copying portfolio link
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
         // Success - tooltip is already handled via CSS
@@ -275,6 +256,71 @@
         alert('Could not copy link – please copy manually');
       });
     }
+
+    // Modal controls
+    function showModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add("show");
+        document.body.classList.add("menu-open");
+      }
+    }
+
+    function hideModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove("show");
+        document.body.classList.remove("menu-open");
+      }
+    }
+
+    // Close modal when clicking outside the modal content
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal") && e.target.classList.contains("show")) {
+        hideModal(e.target.id);
+      }
+    });
+
+    // Desktop dropdown
+    function toggleDropdown(btn) {
+      const group = btn.parentElement;
+      group.classList.toggle("dropdown-active");
+      document.querySelectorAll(".group").forEach((el) => {
+        if (el !== group) el.classList.remove("dropdown-active");
+      });
+    }
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".group")) {
+        document.querySelectorAll(".group").forEach((el) => el.classList.remove("dropdown-active"));
+      }
+    });
+
+    // Mobile sidebar toggle (your original code)
+    const toggleBtn = document.getElementById("menu-toggle-btn");
+    const sidebar = document.getElementById("sidebar");
+    const backdrop = document.getElementById("sidebar-backdrop");
+    const hPath = document.getElementById("h-path");
+
+    function toggleSidebar() {
+      const isOpen = sidebar.classList.contains("translate-x-0");
+      if (isOpen) {
+        sidebar.classList.replace("translate-x-0", "-translate-x-full");
+        backdrop.classList.replace("opacity-100", "opacity-0");
+        backdrop.classList.add("pointer-events-none");
+        hPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+        document.body.classList.remove("menu-open");
+      } else {
+        sidebar.classList.replace("-translate-x-full", "translate-x-0");
+        backdrop.classList.replace("opacity-0", "opacity-100");
+        backdrop.classList.remove("pointer-events-none");
+        hPath.setAttribute("d", "M6 18L18 6M6 6l12 12");
+        document.body.classList.add("menu-open");
+      }
+    }
+
+    if (toggleBtn) toggleBtn.addEventListener("click", toggleSidebar);
+    if (backdrop) backdrop.addEventListener("click", toggleSidebar);
   </script>
 
 </body>
