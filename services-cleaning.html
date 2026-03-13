@@ -295,7 +295,16 @@
     </footer>
 
   </main>
-
+    <script>
+    // Added function for copying portfolio link
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Success - tooltip is already handled via CSS
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert('Could not copy link – please copy manually');
+      });
+    }
   <!-- JavaScript (updated with copyToClipboard function) -->
     // Added function for copying portfolio link
     function copyToClipboard(text) {
