@@ -288,7 +288,7 @@
     <!-- Collapsible Research Summary -->
     <div class="mt-6">
       <!-- Short visible text with line clamp -->
-      <p id="research-text" 
+      <p id="research-text-portfolio" 
          class="text-base md:text-lg text-zinc-600 leading-relaxed font-light overflow-hidden transition-all duration-300"
          style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
         
@@ -297,15 +297,15 @@
       </p>
 
       <!-- Full hidden text -->
-      <p id="research-full" 
+      <p id="research-full-portfolio" 
          class="hidden text-base md:text-lg text-zinc-600 leading-relaxed font-light">
         
         The articles also include systematic and bibliometric reviews of digital twin applications in construction and the built environment, identifying current research trends, benefits, and gaps, and outlining scenarios and architectures for deploying digital twin systems in healthcare facilities and other constructed assets to improve efficiency, reliability, and asset management.
       </p>
 
       <!-- Read More / Read Less Button -->
-      <button onclick="toggleResearch()" 
-              id="read-more-btn"
+      <button onclick="toggleResearchPortfolio()" 
+              id="read-more-btn-portfolio"
               class="mt-6 text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 mx-auto group transition-colors">
         Read More 
         <span class="transition-transform group-hover:translate-y-0.5">↓</span>
@@ -435,6 +435,25 @@
   </main>
 
   <script>
+    // Function for Research Portfolio Section
+    function toggleResearchPortfolio() {
+    const shortText = document.getElementById('research-text-portfolio');
+    const fullText = document.getElementById('research-full-portfolio');
+    const btn = document.getElementById('read-more-btn-portfolio');
+    
+    if (!shortText || !fullText || !btn) return;
+
+    if (fullText.classList.contains('hidden')) {
+      shortText.style.display = 'none';
+      fullText.classList.remove('hidden');
+      btn.innerHTML = `Read Less <span class="transition-transform group-hover:translate-y-0.5">↑</span>`;
+    } else {
+      shortText.style.display = '-webkit-box';
+      fullText.classList.add('hidden');
+      btn.innerHTML = `Read More <span class="transition-transform group-hover:translate-y-0.5">↓</span>`;
+    }
+  }
+    
     function toggleResearch() {
     const shortText = document.getElementById('research-text');
     const fullText = document.getElementById('research-full');
