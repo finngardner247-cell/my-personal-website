@@ -283,41 +283,34 @@
     Research Portfolio
   </h2>
  
-  <div class="text-center max-w-3xl mx-auto mb-12">
-    <!-- Short Description -->
-    <p id="research-short" 
-       class="text-base md:text-lg text-zinc-600 leading-relaxed font-light">
-      Dr. Obinna C. Madubuike's research focuses on applying digital twin technology in construction and healthcare facility management. 
-      He explores how virtual representations of physical assets—powered by real-time sensor data—can improve monitoring, maintenance, 
-      and decision-making throughout the building lifecycle.
-      <button onclick="toggleResearchPortfolio()" 
-              class="ml-2 text-blue-600 hover:text-blue-700 font-medium underline transition-colors">
-        Read more
+  <div class="text-center max-w-3xl mx-auto">
+    
+    <!-- Collapsible Research Summary -->
+    <div class="mt-6">
+      <!-- Short visible text with line clamp -->
+      <p id="research-text" 
+         class="text-base md:text-lg text-zinc-600 leading-relaxed font-light overflow-hidden transition-all duration-300"
+         style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+        
+        Dr. Obinna C. Madubuike's research primarily focuses on the application of digital twin technology in the construction and healthcare facility management sectors. Across his studies, Madubuike examines how digital twins—virtual representations of physical assets that receive real-time data from sensors and connected systems—can improve the monitoring, operation, and maintenance of buildings and infrastructure. 
+        His research highlights the limitations of traditional facility management approaches, which often rely on reactive “fix-when-broken” maintenance, and proposes digital twin–based frameworks that integrate technologies such as Building Information Modeling (BIM), IoT sensors, and data analytics to enable real-time monitoring, predictive maintenance, and better decision-making throughout the lifecycle of facilities.
+      </p>
+
+      <!-- Full hidden text -->
+      <p id="research-full" 
+         class="hidden text-base md:text-lg text-zinc-600 leading-relaxed font-light">
+        
+        The articles also include systematic and bibliometric reviews of digital twin applications in construction and the built environment, identifying current research trends, benefits, and gaps, and outlining scenarios and architectures for deploying digital twin systems in healthcare facilities and other constructed assets to improve efficiency, reliability, and asset management.
+      </p>
+
+      <!-- Read More / Read Less Button -->
+      <button onclick="toggleResearch()" 
+              id="read-more-btn"
+              class="mt-6 text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 mx-auto group transition-colors">
+        Read More 
+        <span class="transition-transform group-hover:translate-y-0.5">↓</span>
       </button>
-    </p>
-
-    <!-- Full Description (hidden by default) -->
-    <p id="research-full" 
-       class="hidden text-base md:text-lg text-zinc-600 leading-relaxed font-light">
-      Dr. Obinna C. Madubuike's research primarily focuses on the application of digital twin technology in the construction 
-      and healthcare facility management sectors. Across his studies, Madubuike examines how digital twins—virtual representations 
-      of physical assets that receive real-time data from sensors and connected systems—can improve the monitoring, operation, 
-      and maintenance of buildings and infrastructure. 
-
-      His research highlights the limitations of traditional facility management approaches, which often rely on reactive 
-      “fix-when-broken” maintenance, and proposes digital twin–based frameworks that integrate technologies such as Building 
-      Information Modeling (BIM), IoT sensors, and data analytics to enable real-time monitoring, predictive maintenance, 
-      and better decision-making throughout the lifecycle of facilities. 
-
-      The articles also include systematic and bibliometric reviews of digital twin applications in construction and the built 
-      environment, identifying current research trends, benefits, and gaps, and outlining scenarios and architectures for deploying 
-      digital twin systems in healthcare facilities and other constructed assets to improve efficiency, reliability, and asset management.
-      
-      <button onclick="toggleResearchPortfolio()" 
-              class="ml-2 text-blue-600 hover:text-blue-700 font-medium underline transition-colors">
-        Show less
-      </button>
-    </p>
+    </div>
   </div>
 </section>
 
